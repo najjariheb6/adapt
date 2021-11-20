@@ -19,4 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('category', 'CategoryController');
+Route::resource('ticket', 'TicketController');
+Route::resource('client', 'ClientController');
+// Route::post('/ticket','TicketController@addClient');
+
 

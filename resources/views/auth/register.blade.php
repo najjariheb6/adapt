@@ -471,7 +471,7 @@
                         <svg class="icon-icon-user">
                           <use xlink:href="#icon-user"></use>
                         </svg></span>
-                                        <input id="name" class="input" name="name" type="text" value="Felecia Burke" autofocus required>
+                                        <input id="name" class="input" name="name" type="text" value="user" autofocus required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -479,7 +479,7 @@
                         <svg class="icon-icon-email-2">
                           <use xlink:href="#icon-email-2"></use>
                         </svg></span>
-                                        <input id="email" name="email" class="input" type="email" value="{{ old('email') }}"  required>
+                                        <input id="email" name="email" class="input" type="email"  placeholder="user@gmail.com"  required>
                                     </div>
                                 </div>
                                 <div class="form-group">

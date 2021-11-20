@@ -508,7 +508,7 @@
                 <div class="page-header">
                     <h1 class="page-header__title">Edit Category</h1>
                 </div>
-                 <form class="add-product__form" action="{{action('CategoryController@update',$category['id'])}}" method="post">
+                 <form class="add-product__form" action="{{action('ClientController@update',$clients['id'])}}" method="post">
                                  {{csrf_field()}}
                 <div class="card add-product card--content-center">
                     <div class="card__wrapper">
@@ -519,18 +519,22 @@
                                     <div class="add-product__right">
                                         <div class="row row--md">
                                             <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">Category Name</label>
+                                                <label class="form-label">Nom Client</label>
                                                 <div class="input-group">
-                                                    <input class="input" name="title" type="text" placeholder="" value="{{$category->title}}" required>
+                                                    <input class="input" name="nom_client" type="text" placeholder="" value="{{$clients->nom_client}}" required>
                                                 </div>
                                             </div>
                                             <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">Description</label>
-                                                <input class="input" name="discription" type="text" placeholder="" value="{{$category->discription}}" required>
+                                                <label class="form-label">Numero Tel</label>
+                                                <input class="input" name="numero_tel" type="text" placeholder="" value="{{$clients->numero_tel}}" required>
                                             </div>
                                             <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">URL</label>
-                                                <input class="input" name="url" type="text" placeholder="" value="{{$category->url}}" required>
+                                                <label class="form-label">Email Client</label>
+                                                <input class="input" name="email_client" type="text" placeholder="" value="{{$clients->email_client}}" required>
+                                            </div>
+                                            <div class="col-12 form-group form-group--lg">
+                                                <label class="form-label">Adress Client</label>
+                                                <input class="input" name="adress_client" type="text" placeholder="" value="{{$clients->adress_client}}" required>
                                             </div>
                                            
                                         </div>
@@ -540,7 +544,7 @@
                                                 type="submit" data-modal="#addProductSuccess"><span class="button__text">Update</span>
                                                 </button>
                                             </div>
-                                            <div class="modal__footer-button"><a class="button button--secondary button--block" href="{{url ('/category') }}"><span class="button__text">Cancel</span></a>
+                                            <div class="modal__footer-button"><a class="button button--secondary button--block" href="{{url ('/client') }}"><span class="button__text">Cancel</span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -550,31 +554,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="modal modal-compact modal-success scrollbar-thin" id="addProductSuccess" data-simplebar>
-        <div class="modal__overlay" data-dismiss="modal"></div>
-        <div class="modal__wrap">
-            <div class="modal__window">
-                <div class="modal__content">
-                    <div class="modal__body">
-                        <div class="modal__container">
-                            <img class="modal-success__icon" src="img/content/checked-success.svg" alt="#">
-                            <h4 class="modal-success__title">Category was update</h4>
-                        </div>
-                    </div>
-                    <div class="modal-compact__buttons ">
-                           <div class="modal-compact__button-item">
-                            <button class="modal-compact__button button" data-dismiss="modal" data-modal="#addProduct"><span class="button__text">Succeess</span>
-                            </button>
-                        </div>
-                        <div class="modal-compact__button-item">
-                            <button class="modal-compact__button button" data-dismiss="modal" type="submit"><span class="button__text">Close</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div> --}}
+           
          </form>
         </main>
         

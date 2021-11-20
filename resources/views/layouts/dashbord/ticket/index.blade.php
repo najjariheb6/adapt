@@ -2,115 +2,49 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en" data-theme="light">
 
-
 <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="MobileOptimized" content="320" />
-        <meta name="HandheldFriendly" content="True" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Adapt Admin Dashboard</title>
-        <meta name="description" content="Arion — This is the best dashboard" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta
-            name="application-name"
-            content="Arion — This is the best dashboard"
-        />
-        <meta
-            name="apple-mobile-web-app-title"
-            content="Arion Admin Dashboard"
-        />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <link rel="stylesheet" href="{{ asset('') }}/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="{{ asset('') }}/css/apexcharts.css" />
-        <link rel="stylesheet" href="{{ asset('') }}/css/tippy/tippy.css " />
-        <link rel="stylesheet" href="{{ asset('') }}/css/flatpickr.min.css " />
-        <link rel="stylesheet" href="{{ asset('') }}/css/select2.min.css " />
-        <link rel="stylesheet" href="{{ asset('') }}/css/quill/quill.snow.css " />
-        <link rel="stylesheet" href="{{ asset('') }}/css/quill/quill.core.css " />
-        <link rel="stylesheet" href="{{ asset('') }}/css/filepond.min.css " />
-        <link
-            rel="stylesheet"
-            href="{{ asset('') }}/css/filepond-plugin-image-preview.min.css"
-        />
-        <link rel="stylesheet" href="{{ asset('') }}/css/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="{{ asset('') }}/css/style.css" />
-        <link
-            rel="apple-touch-icon"
-            sizes="57x57"
-            href="img/content/favicons/apple-icon-57x57.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="60x60"
-            href="img/content/favicons/apple-icon-60x60.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="72x72"
-            href="img/content/favicons/apple-icon-72x72.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="img/content/favicons/apple-icon-76x76.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="114x114"
-            href="img/content/favicons/apple-icon-114x114.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="120x120"
-            href="img/content/favicons/apple-icon-120x120.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="144x144"
-            href="img/content/favicons/apple-icon-144x144.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="img/content/favicons/apple-icon-152x152.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="img/content/favicons/apple-icon-180x180.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="img/content/favicons/android-icon-192x192.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="img/content/favicons/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="96x96"
-            href="img/content/favicons/favicon-96x96.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="img/content/favicons/favicon-16x16.png"
-        />
-        <!-- <link rel="manifest" href="img/content/favicons/manifest.json" />-->
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-        <meta name="theme-color" content="#ffffff" />
-    </head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arion Admin Dashboard</title>
+    <meta name="description" content="Arion — This is the best dashboard" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Arion — This is the best dashboard" />
+    <meta name="apple-mobile-web-app-title" content="Arion Admin Dashboard" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/apexcharts.css" />
+    <link rel="stylesheet" href="css/tippy/tippy.css" />
+    <link rel="stylesheet" href="css/flatpickr.min.css" />
+    <link rel="stylesheet" href="css/select2.min.css" />
+    <link rel="stylesheet" href="css/quill/quill.snow.css" />
+    <link rel="stylesheet" href="css/quill/quill.core.css" />
+    <link rel="stylesheet" href="css/filepond.min.css" />
+    <link rel="stylesheet" href="css/filepond-plugin-image-preview.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="apple-touch-icon" sizes="57x57" href="img/content/favicons/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="img/content/favicons/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/content/favicons/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="img/content/favicons/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/content/favicons/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="img/content/favicons/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="img/content/favicons/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="img/content/favicons/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/content/favicons/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="img/content/favicons/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/content/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="img/content/favicons/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/content/favicons/favicon-16x16.png" />
+    <!-- <link rel="manifest" href="img/content/favicons/manifest.json" />-->
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+</head>
 
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important;"
@@ -503,112 +437,296 @@
     <div class="page-wrapper">
         @include('layouts.dashbord.header')
         @include('layouts.dashbord.sideBar')
-      <main class="page-content">
+        <main class="page-content">
             <div class="container">
                 <div class="page-header">
-                    <h1 class="page-header__title">Edit Category</h1>
+                    <h1 class="page-header__title">Tickets</h1>
                 </div>
-                 <form class="add-product__form" action="{{action('CategoryController@update',$category['id'])}}" method="post">
-                                 {{csrf_field()}}
-                <div class="card add-product card--content-center">
-                    <div class="card__wrapper">
-                        <div class="card__container">
-                           
-                                <div class="add-product__row">
-                                    <input name="_method" type="hidden" value="PATCH">
-                                    <div class="add-product__right">
-                                        <div class="row row--md">
-                                            <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">Category Name</label>
-                                                <div class="input-group">
-                                                    <input class="input" name="title" type="text" placeholder="" value="{{$category->title}}" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">Description</label>
-                                                <input class="input" name="discription" type="text" placeholder="" value="{{$category->discription}}" required>
-                                            </div>
-                                            <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">URL</label>
-                                                <input class="input" name="url" type="text" placeholder="" value="{{$category->url}}" required>
-                                            </div>
-                                           
-                                        </div>
-                                        <div class="add-product__submit">
-                                            <div class="modal__footer-button">
-                                                <button class="button button--primary button--block" data-dismiss="modal" 
-                                                type="submit" data-modal="#addProductSuccess"><span class="button__text">Update</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal__footer-button"><a class="button button--secondary button--block" href="{{url ('/category') }}"><span class="button__text">Cancel</span></a>
-                                            </div>
+                <div class="page-tools">
+                    <div class="page-tools__breadcrumbs">
+                        <div class="breadcrumbs">
+                            <div class="breadcrumbs__container">
+                                <ol class="breadcrumbs__list">
+                                    <li class="breadcrumbs__item">
+                                        <a class="breadcrumbs__link" href="index.html">
+                                            <svg class="icon-icon-home breadcrumbs__icon">
+                                                <use xlink:href="#icon-home"></use>
+                                            </svg>
+                                            <svg class="icon-icon-keyboard-right breadcrumbs__arrow">
+                                                <use xlink:href="#icon-keyboard-right"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="breadcrumbs__item disabled"><a class="breadcrumbs__link" href="#"><span>Ticket</span>
+                        <svg class="icon-icon-keyboard-right breadcrumbs__arrow">
+                          <use xlink:href="#icon-keyboard-right"></use>
+                        </svg></a>
+                                    </li>
+                                    <li class="breadcrumbs__item active"><span class="breadcrumbs__link">Tickets</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-tools__right">
+                        <div class="page-tools__right-row">
+                            <div class="page-tools__right-item"><a class="button-icon" href="#"><span class="button-icon__icon">
+                      <svg class="icon-icon-print">
+                        <use xlink:href="#icon-print"></use>
+                      </svg></span></a>
+                            </div>
+                            <div class="page-tools__right-item"><a class="button-icon" href="#"><span class="button-icon__icon">
+                      <svg class="icon-icon-import">
+                        <use xlink:href="#icon-import"></use>
+                      </svg></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="toolbox">
+                    <div class="toolbox__row row gutter-bottom-xs">
+                        <div class="toolbox__left col-12 col-lg">
+                            <div class="toolbox__left-row row row--xs gutter-bottom-xs">
+                                <div class="form-group form-group--inline col-12 col-sm-auto">
+                                    <label class="form-label">Show</label>
+                                    <div class="input-group input-group--white input-group--append">
+                                        <input class="input input--select" type="text" value="10" size="1" data-toggle="dropdown" readonly><span class="input-group__arrow">
+                        <svg class="icon-icon-keyboard-down">
+                          <use xlink:href="#icon-keyboard-down"></use>
+                        </svg></span>
+                                        <div class="dropdown-menu dropdown-menu--right dropdown-menu--fluid js-dropdown-select"><a class="dropdown-menu__item active" href="#" tabindex="0" data-value="10">10</a><a class="dropdown-menu__item" href="#" tabindex="0" data-value="15">15</a><a class="dropdown-menu__item" href="#" tabindex="0" data-value="20">20</a>
+                                            <a
+                                            class="dropdown-menu__item" href="#" tabindex="0" data-value="25">25</a><a class="dropdown-menu__item" href="#" tabindex="0" data-value="50">50</a>
                                         </div>
                                     </div>
                                 </div>
-                           
+                                <div class="form-group form-group--inline col col-sm-auto">
+                                    <div class="input-group input-group--white input-group--prepend input-group--append">
+                                        <div class="input-group__prepend">
+                                            <svg class="icon-icon-calendar">
+                                                <use xlink:href="#icon-calendar"></use>
+                                            </svg>
+                                        </div>
+                                        <input class="input input--select" type="text" value="01.12.18 / 07.12.18" readonly><span class="input-group__arrow">
+                        <svg class="icon-icon-keyboard-down">
+                          <use xlink:href="#icon-keyboard-down"></use>
+                        </svg></span>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group--inline col-12 col-sm-auto d-none d-sm-block">
+                                    <div class="toolbox__status input-group input-group--white input-group--append">
+                                        <input class="input input--select" type="text" value="All status" data-toggle="dropdown" readonly><span class="input-group__arrow">
+                        <svg class="icon-icon-keyboard-down">
+                          <use xlink:href="#icon-keyboard-down"></use>
+                        </svg></span>
+                                        <div class="dropdown-menu dropdown-menu--right dropdown-menu--fluid js-dropdown-select"><a class="dropdown-menu__item active" href="#" tabindex="0" data-value="All status"><span class="marker-item"></span> All status</a>
+                                            <a class="dropdown-menu__item" href="#" tabindex="0" data-value="Complete"><span class="marker-item color-green"></span> Complete</a><a class="dropdown-menu__item" href="#" tabindex="0" data-value="Pending"><span class="marker-item color-blue"></span> Pending</a><a class="dropdown-menu__item"
+                                            href="#" tabindex="0" data-value="Processing"><span class="marker-item color-orange"></span> Processing</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toolbox__right col-12 col-lg-auto">
+                            <div class="toolbox__right-row row row--xs flex-nowrap">
+                                <div class="col col-lg-auto">
+                                    <form class="toolbox__search" method="GET">
+                                        <div class="input-group input-group--white input-group--prepend">
+                                            <div class="input-group__prepend">
+                                                <svg class="icon-icon-search">
+                                                    <use xlink:href="#icon-search"></use>
+                                                </svg>
+                                            </div>
+                                            <input class="input" type="text" placeholder="Search product">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="button-add button-add--blue" onclick="javascript:location.href = '{{url('/ticket/create')}}'"data-modal="#addProduct"><span class="button-add__icon">
+                        <svg class="icon-icon-plus">
+                          <use xlink:href="#icon-plus"></use>
+                        </svg></span><span class="button-add__text"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <div class="table-wrapper__content table-collapse scrollbar-thin scrollbar-visible" data-simplebar>
+                        <table class="table table--lines">
+                            <colgroup>
+                                <col width="90px">
+                                    <col width="100px">
+                                        <col width="16%">
+                                            <col>
+                                                <col>
+                                                    <col>
+                                                        <col>
+                                                            <col>
+                            </colgroup>
+                            <thead class="table__header">
+                                <tr class="table__header-row">
+                                    <th>
+                                        <div class="table__checkbox table__checkbox--all">
+                                            <label class="checkbox">
+                                                <input class="js-checkbox-all" type="checkbox" data-checkbox-all="product"><span class="checkbox__marker"><span class="checkbox__marker-icon">
+                              <svg class="icon-icon-checked">
+                                <use xlink:href="#icon-checked"></use>
+                              </svg></span></span>
+                                            </label>
+                                        </div>
+                                    </th>
+                                    <th class="d-none d-lg-table-cell"><span>Ticket ID</span>
+                                    </th>
+                                    <th class="table__th-sort"><span class="align-middle">Nom Client</span><span class="sort sort--down"></span>
+                                    </th>
+                                    <th class="table__th-sort"><span class="align-middle">Numero Tel</span><span class="sort sort--down"></span>
+                                    </th>
+                                    <th class="table__th-sort d-none d-sm-table-cell"><span class="align-middle">Produit</span><span class="sort sort--down"></span>
+                                    </th>
+                                    <th class="table__th-sort d-none d-sm-table-cell"><span class="align-middle">Mode</span><span class="sort sort--down"></span>
+                                    </th>
+                                    <th class="table__th-sort"><span class="align-middle">Date</span><span class="sort sort--down"></span>
+                                    </th>
+                                    
+                                    <th class="table__actions"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{--  --}}
+                                
+                                {{--  --}}
+                                <tr class="table__row">
+                                    <td class="table__td">
+                                        <div class="table__checkbox table__checkbox--all">
+                                            <label class="checkbox">
+                                                <input type="checkbox" data-checkbox="product"><span class="checkbox__marker"><span class="checkbox__marker-icon">
+                              <svg class="icon-icon-checked">
+                                <use xlink:href="#icon-checked"></use>
+                              </svg></span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="d-none d-lg-table-cell table__td"><span class="text-grey">#833902</span>
+                                    </td>
+                                    <td class="table__td">Client</td>
+                                    <td class="d-none d-sm-table-cell table__td"><span >+216548579548</span>
+                                    </td>
+                                    <td class="table__td"><span>SmartPhone</span>
+                                    </td>
+                                    
+                                    <td class="d-none d-sm-table-cell table__td">
+                                        <div class="table__status"><span class="table__status-icon color-green"></span> Payer</div>
+                                    </td>
+                                    <td class="table__td text-nowrap"><span>12.07.2018</span> 10:00 PM</td>
+                                    <td class="table__td table__actions">
+                                        <div class="items-more">
+                                            <button class="items-more__button">
+                                                <svg class="icon-icon-more">
+                                                    <use xlink:href="#icon-more"></use>
+                                                </svg>
+                                            </button>
+                                            <div class="dropdown-items dropdown-items--right dropdown-items--up">
+                                                <div class="dropdown-items__container">
+                                                    <ul class="dropdown-items__list">
+                                                        <li class="dropdown-items__item"><a class="dropdown-items__link" href="order-details.html"><span class="dropdown-items__link-icon">
+                                    <svg class="icon-icon-view">
+                                      <use xlink:href="#icon-view"></use>
+                                    </svg></span>Details</a>
+                                                        </li>
+                                                        <li class="dropdown-items__item"><a class="dropdown-items__link"><span class="dropdown-items__link-icon">
+                                    <svg class="icon-icon-duplicate">
+                                      <use xlink:href="#icon-duplicate"></use>
+                                    </svg></span>Duplicate</a>
+                                                        </li>
+                                                        <li class="dropdown-items__item"><a class="dropdown-items__link"><span class="dropdown-items__link-icon">
+                                    <svg class="icon-icon-archive">
+                                      <use xlink:href="#icon-archive"></use>
+                                    </svg></span>Edite</a>
+                                                        </li>
+                                                        <li class="dropdown-items__item"><a class="dropdown-items__link"><span class="dropdown-items__link-icon">
+                                    <svg class="icon-icon-trash">
+                                      <use xlink:href="#icon-trash"></use>
+                                    </svg></span>Delete</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-wrapper__footer">
+                        <div class="row">
+                            <div class="table-wrapper__show-result col text-grey"><span class="d-none d-sm-inline-block">Showing</span> 1 to 10 <span class="d-none d-sm-inline-block">of 50 items</span>
+                            </div>
+                            <div class="table-wrapper__pagination col-auto">
+                                <ol class="pagination">
+                                    <li class="pagination__item">
+                                        <a class="pagination__arrow pagination__arrow--prev" href="#">
+                                            <svg class="icon-icon-keyboard-left">
+                                                <use xlink:href="#icon-keyboard-left"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="pagination__item active"><a class="pagination__link" href="#">1</a>
+                                    </li>
+                                    <li class="pagination__item"><a class="pagination__link" href="#">2</a>
+                                    </li>
+                                    <li class="pagination__item"><a class="pagination__link" href="#">3</a>
+                                    </li>
+                                    <li class="pagination__item pagination__item--dots">...</li>
+                                    <li class="pagination__item"><a class="pagination__link" href="#">10</a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a class="pagination__arrow pagination__arrow--next" href="#">
+                                            <svg class="icon-icon-keyboard-right">
+                                                <use xlink:href="#icon-keyboard-right"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {{-- <div class="modal modal-compact modal-success scrollbar-thin" id="addProductSuccess" data-simplebar>
-        <div class="modal__overlay" data-dismiss="modal"></div>
-        <div class="modal__wrap">
-            <div class="modal__window">
-                <div class="modal__content">
-                    <div class="modal__body">
-                        <div class="modal__container">
-                            <img class="modal-success__icon" src="img/content/checked-success.svg" alt="#">
-                            <h4 class="modal-success__title">Category was update</h4>
-                        </div>
-                    </div>
-                    <div class="modal-compact__buttons ">
-                           <div class="modal-compact__button-item">
-                            <button class="modal-compact__button button" data-dismiss="modal" data-modal="#addProduct"><span class="button__text">Succeess</span>
-                            </button>
-                        </div>
-                        <div class="modal-compact__button-item">
-                            <button class="modal-compact__button button" data-dismiss="modal" type="submit"><span class="button__text">Close</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div> --}}
-         </form>
         </main>
-        
-    <script src=" {{asset('js/gsap/gsap.min.js')}}"></script>
-    <script src=" {{asset('js/gsap/ScrollToPlugin.min.js')}}"></script>
-    <script src=" {{asset('js/gsap/ScrollTrigger.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/popper.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/jquery.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/bootstrap.bundle.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/imagesloaded.pkgd.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/simplebar.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/tippy-bundle.umd.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/grid/masonry.pkgd.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/grid/isotope.pkgd.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/charts/circle-progress.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/charts/echarts.common.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/charts/apexcharts/apexcharts.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/cleave/cleave.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/cleave/addons/cleave-phone.us.js')}}"></script>
-    <script src=" {{asset('js/vendor/jqvmap/jquery.vmap.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/jqvmap/jquery.vmap.world.js')}}"></script>
-    <script src=" {{asset('js/vendor/jqvmap/jquery.vmap.sampledata.js')}}"></script>
-    <script src=" {{asset('js/vendor/jquery.star-rating-svg.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/calendar/flatpickr/flatpickr.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/calendar/flatpickr/en.js')}}"></script>
-    <script src=" {{asset('js/vendor/select2.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/editors/quill.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/filepond/filepond-plugin-image-preview.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/filepond/filepond.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/swiper-bundle.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/scrollmagic/ScrollMagic.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/scrollmagic/debug.addIndicators.min.js')}}"></script>
-    <script src=" {{asset('js/components.js')}}"></script>
-    <script src=" {{asset('js/common.js')}}"></script>
+    </div>
+    <script src="js/gsap/gsap.min.js"></script>
+    <script src="js/gsap/ScrollToPlugin.min.js"></script>
+    <script src="js/gsap/ScrollTrigger.min.js"></script>
+    <script src="js/vendor/popper.min.js"></script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="js/vendor/simplebar.min.js"></script>
+    <script src="js/vendor/tippy-bundle.umd.min.js"></script>
+    <script src="js/vendor/grid/masonry.pkgd.min.js"></script>
+    <script src="js/vendor/grid/isotope.pkgd.min.js"></script>
+    <script src="js/vendor/charts/circle-progress.min.js"></script>
+    <script src="js/vendor/charts/echarts.common.min.js"></script>
+    <script src="js/vendor/charts/apexcharts/apexcharts.min.js"></script>
+    <script src="js/vendor/cleave/cleave.min.js"></script>
+    <script src="js/vendor/cleave/addons/cleave-phone.us.js"></script>
+    <script src="js/vendor/jqvmap/jquery.vmap.min.js"></script>
+    <script src="js/vendor/jqvmap/jquery.vmap.world.js"></script>
+    <script src="js/vendor/jqvmap/jquery.vmap.sampledata.js"></script>
+    <script src="js/vendor/jquery.star-rating-svg.min.js"></script>
+    <script src="js/vendor/calendar/flatpickr/flatpickr.min.js"></script>
+    <script src="js/vendor/calendar/flatpickr/en.js"></script>
+    <script src="js/vendor/select2.min.js"></script>
+    <script src="js/vendor/editors/quill.min.js"></script>
+    <script src="js/vendor/filepond/filepond-plugin-image-preview.min.js"></script>
+    <script src="js/vendor/filepond/filepond.min.js"></script>
+    <script src="js/vendor/swiper-bundle.min.js"></script>
+    <script src="js/vendor/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="js/vendor/scrollmagic/debug.addIndicators.min.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/common.js"></script>
 </body>
 
 </html>

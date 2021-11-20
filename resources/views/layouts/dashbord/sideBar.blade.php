@@ -36,6 +36,7 @@
                                         ></a
                                     >
                                 </li>
+                                {{--------------- category ---------------------}}
                                 <li class="sidebar__menu-item">
                                     <a
                                         class="sidebar__link"
@@ -77,10 +78,40 @@
                                                     ></a
                                                 >
                                             </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </li>
+                                
+                                {{-------------------- client ----------------}}
+                                <li class="sidebar__menu-item">
+                                    <a
+                                        class="sidebar__link"
+                                        href="#"
+                                        data-toggle="collapse"
+                                        data-target="#client"
+                                        aria-expanded="false"
+                                        ><span class="sidebar__link-icon">
+                                            <svg class="icon-icon-cart">
+                                                <use
+                                                    xlink:href="#icon-cart"
+                                                ></use></svg></span
+                                        ><span class="sidebar__link-text"
+                                            >Client</span
+                                        ><span class="sidebar__link-arrow">
+                                            <svg
+                                                class="icon-icon-keyboard-down"
+                                            >
+                                                <use
+                                                    xlink:href="#icon-keyboard-down"
+                                                ></use></svg></span
+                                    ></a>
+                                    <div class="collapse" id="client">
+                                        <ul class="sidebar__collapse-menu">
                                             <li class="sidebar__menu-item">
                                                 <a
                                                     class="sidebar__link"
-                                                    href="{{url('CategoryController@index')}}"
+                                                    href="{{url ('/client') }}"
                                                     ><span
                                                         class="
                                                             sidebar__link-signal
@@ -90,10 +121,93 @@
                                                         class="
                                                             sidebar__link-text
                                                         "
-                                                        >Add Gategory</span
+                                                        >Voir client</span
                                                     ></a
                                                 >
                                             </li>
+                                            <li class="sidebar__menu-item">
+                                                <a
+                                                    class="sidebar__link"
+                                                    href="{{url ('/client/create') }}"
+                                                    ><span
+                                                        class="
+                                                            sidebar__link-signal
+                                                        "
+                                                    ></span
+                                                    ><span
+                                                    url="{{url ('/client/create') }}"
+                                                        class="
+                                                            sidebar__link-text
+                                                        "
+                                                        >Create Client</span
+                                                    ></a
+                                                >
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </li>
+                                {{------------------- ticket -----------------}}
+                                <li class="sidebar__menu-item">
+                                    <a
+                                        class="sidebar__link"
+                                        href="#"
+                                        data-toggle="collapse"
+                                        data-target="#ticket"
+                                        aria-expanded="false"
+                                        ><span class="sidebar__link-icon">
+                                            <svg class="icon-icon-cart">
+                                                <use
+                                                    xlink:href="#icon-cart"
+                                                ></use></svg></span
+                                        ><span class="sidebar__link-text"
+                                            >Ticket</span
+                                        ><span class="sidebar__link-arrow">
+                                            <svg
+                                                class="icon-icon-keyboard-down"
+                                            >
+                                                <use
+                                                    xlink:href="#icon-keyboard-down"
+                                                ></use></svg></span
+                                    ></a>
+                                    <div class="collapse" id="ticket">
+                                        <ul class="sidebar__collapse-menu">
+                                            <li class="sidebar__menu-item">
+                                                <a
+                                                    class="sidebar__link"
+                                                    href="{{url ('/ticket') }}"
+                                                    ><span
+                                                        class="
+                                                            sidebar__link-signal
+                                                        "
+                                                    ></span
+                                                    ><span
+                                                        class="
+                                                            sidebar__link-text
+                                                        "
+                                                        >Ticket SAV</span
+                                                    ></a
+                                                >
+                                            </li>
+                                              <li class="sidebar__menu-item">
+                                                <a
+                                                    class="sidebar__link"
+                                                    href="{{url ('/ticket/create') }}"
+                                                    ><span
+                                                        class="
+                                                            sidebar__link-signal
+                                                        "
+                                                    ></span
+                                                    ><span
+                                                    url="{{url ('/ticket/create') }}"
+                                                        class="
+                                                            sidebar__link-text
+                                                        "
+                                                        >Create Ticket</span
+                                                    ></a
+                                                >
+                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </li>

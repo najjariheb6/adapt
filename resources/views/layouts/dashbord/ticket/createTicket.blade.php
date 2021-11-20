@@ -503,49 +503,176 @@
     <div class="page-wrapper">
         @include('layouts.dashbord.header')
         @include('layouts.dashbord.sideBar')
-      <main class="page-content">
+    <main class="page-content">
             <div class="container">
                 <div class="page-header">
-                    <h1 class="page-header__title">Edit Category</h1>
+                    <h1 class="page-header__title">Create Ticket</h1>
                 </div>
-                 <form class="add-product__form" action="{{action('CategoryController@update',$category['id'])}}" method="post">
-                                 {{csrf_field()}}
                 <div class="card add-product card--content-center">
                     <div class="card__wrapper">
                         <div class="card__container">
-                           
+                                <div class="toolbox">
+                    <div class="toolbox__row row gutter-bottom-xs">
+                        <div class="col-auto">
+                                    <button class="button-add button-add--blue" data-modal="#addProduct"><span class="button-add__icon">
+                        <svg class="icon-icon-plus">
+                        <use xlink:href="#icon-plus"></use>
+                        </svg></span><span class="button-add__text"></span>
+                                    </button>
+                                </div>
+                                <div class="form-group form-group--inline col col-sm-auto">
+                                    <form class="add-product__form" action="{{action('TicketController@store')}}" method="POST">
+                                {{csrf_field()}}
+                                    <div class="input-group input-group--white input-group--append">
+                                        <select class="input js-input-select" data-placeholder="">
+                                            
+                                            <option  selected disabled>All Clients
+                                            </option>
+                                            @foreach($clients as $client)
+                                            <option >{{$client->nom_client}}
+                                            </option>
+                                        @endforeach
+                                        </select>
+                                        <span class="input-group__arrow">
+                        <svg class="icon-icon-keyboard-down">
+                        <use xlink:href="#icon-keyboard-down"></use>
+                        </svg></span>
+                                    </div>
+                                </div>
+                                {{-- <div class="form-group form-group--inline col-12 col-sm-auto d-none d-sm-block">
+                                    <div class="toolbox__status input-group input-group--white input-group--append">
+                                    <div class="input-group input-group--white input-group--append">
+                                        <select class="input js-input-select" data-placeholder="" id="mode" name="mode">
+                                            <option value="Mode" selected disabled>Mode
+                                            </option>
+                                            <option value="Garentie">Garentie
+                                            </option>
+                                            <option value="Payer">Payer
+                                            </option>
+                                            <option value="Sous-Contrat">Sous-Contrat
+                                            </option>
+                                        </select>
+                                        <span class="input-group__arrow">
+                        <svg class="icon-icon-keyboard-down">
+                        <use xlink:href="#icon-keyboard-down"></use>
+                        </svg></span>
+                                    </div>
+                                </div>
+                                    </div> --}}
+                                </div>
+                            </div>
+                        </div>
                                 <div class="add-product__row">
-                                    <input name="_method" type="hidden" value="PATCH">
+                                    {{-- <input name="_method" type="hidden" value="post"> --}}
+                                    <h4 class="page-header__title">Machine</h4>
+                                        <br/>
                                     <div class="add-product__right">
+                                        
                                         <div class="row row--md">
                                             <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">Category Name</label>
+                                                <label class="form-label">Produit</label>
                                                 <div class="input-group">
-                                                    <input class="input" name="title" type="text" placeholder="" value="{{$category->title}}" required>
+                                                    <input class="input" name="produit" type="text" placeholder="" value="" required>
                                                 </div>
                                             </div>
                                             <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">Description</label>
-                                                <input class="input" name="discription" type="text" placeholder="" value="{{$category->discription}}" required>
+                                                <label class="form-label">Marque</label>
+                                                <input class="input" name="marque" type="text" placeholder="" value="" required>
                                             </div>
                                             <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">URL</label>
-                                                <input class="input" name="url" type="text" placeholder="" value="{{$category->url}}" required>
-                                            </div>
-                                           
-                                        </div>
-                                        <div class="add-product__submit">
-                                            <div class="modal__footer-button">
-                                                <button class="button button--primary button--block" data-dismiss="modal" 
-                                                type="submit" data-modal="#addProductSuccess"><span class="button__text">Update</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal__footer-button"><a class="button button--secondary button--block" href="{{url ('/category') }}"><span class="button__text">Cancel</span></a>
+                                                <label class="form-label">N° Série</label>
+                                                <input class="input" name="n°série" type="text" placeholder="" value="" required>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="add-product__left">
+                                        <div class="row row--md">
+                                            <div class="col-12 form-group form-group--lg">
+                                                <label class="form-label">Description de la panne</label>
+                                                <div class="input-group">
+                                                    <input class="input" name="description_panne" type="text" placeholder="" value="" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 form-group form-group--lg">
+                                                <label class="form-label">Accesoires de la machine</label>
+                                                <input class="input" name="accesoires_machine" type="text" placeholder="" value="" required>
+                                            </div>
+                                            <div class="col-12 form-group form-group--lg">
+                                                <label class="form-label">Etat de la machine</label>
+                                                <input class="input" name="etat_machine" type="text" placeholder="" value="" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="add-product__submit">
+                                            <div class="modal__footer-button">
+                                                <button class="button button--primary button--block" data-dismiss="modal" type="submit" ><span class="button__text">Create</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal__footer-button"><a class="button button--secondary button--block" href="#"><span class="button__text">Cancel</span></a>
+                                            </div>
+                                        </div>
                                 </div>
-                           
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="modal modal--panel modal--right" id="addProduct">
+        <div class="modal__overlay" data-dismiss="modal"></div>
+        <div class="modal__wrap">
+            <div class="modal__window scrollbar-thin" data-simplebar>
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <div class="modal__container">
+                            <h2 class="modal__title">Add Client</h2>
+                        </div>
+                    </div>
+                    <div class="modal__body">
+                        <div class="modal__container">
+                            <form method="POST" action="{{action('TicketController@storeClient')}}">
+                                {{ csrf_field() }}
+                                <div class="row row--md">
+                                    <div class="col-12 form-group form-group--lg">
+                                        <label  class="form-label">Nom client</label>
+                                        <div class="input-group">
+                                            <input   class="input" type="text" placeholder="" name="nom_client" value="" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-group form-group--lg">
+                                        <label   class="form-label" name="discription">Numero Tel</label>
+                                        <div class="input-editor">
+                                            <input  class="input" type="text" placeholder="" name="numero_tel" value="" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-group form-group--lg">
+                                        <label  class="form-label">Email client</label>
+                                        <div class="input-group">
+                                            <input  class="input" type="text" placeholder="" name="email_client" value="" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-group form-group--lg">
+                                        <label  class="form-label">adress client</label>
+                                        <div class="input-group">
+                                            <input  class="input" type="text" placeholder="" name="adress_client" value="" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal__footer">
+                        <div class="modal__container">
+                            <div class="modal__footer-buttons">
+                                <div class="modal__footer-button">
+                                    <button  type="submit" class="button button--secondary button--block"  ><span class="button__text"  >Create</span>
+                                    </button>
+                                </div>
+                                <div class="modal__footer-button">
+                                    <button class="button button--secondary button--block" data-dismiss="modal"><span class="button__text">Cancel</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -558,16 +685,16 @@
                     <div class="modal__body">
                         <div class="modal__container">
                             <img class="modal-success__icon" src="img/content/checked-success.svg" alt="#">
-                            <h4 class="modal-success__title">Category was update</h4>
+                            <h4 class="modal-success__title">Client was added</h4>
                         </div>
                     </div>
-                    <div class="modal-compact__buttons ">
-                           <div class="modal-compact__button-item">
-                            <button class="modal-compact__button button" data-dismiss="modal" data-modal="#addProduct"><span class="button__text">Succeess</span>
+                    <div class="modal-compact__buttons">
+                        <div class="modal-compact__button-item">
+                            <button class="modal-compact__button button" data-dismiss="modal" data-modal="#addProduct"><span class="button__text">Add new client</span>
                             </button>
                         </div>
                         <div class="modal-compact__button-item">
-                            <button class="modal-compact__button button" data-dismiss="modal" type="submit"><span class="button__text">Close</span>
+                            <button class="modal-compact__button button" data-dismiss="modal"><span class="button__text">Close</span>
                             </button>
                         </div>
                     </div>
@@ -575,9 +702,7 @@
             </div>
         </div>
         </div> --}}
-         </form>
-        </main>
-        
+    </div>
     <script src=" {{asset('js/gsap/gsap.min.js')}}"></script>
     <script src=" {{asset('js/gsap/ScrollToPlugin.min.js')}}"></script>
     <script src=" {{asset('js/gsap/ScrollTrigger.min.js')}}"></script>
@@ -610,5 +735,5 @@
     <script src=" {{asset('js/components.js')}}"></script>
     <script src=" {{asset('js/common.js')}}"></script>
 </body>
+</html> 
 
-</html>

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
 
-class CategoryController extends Controller
+use App\Ticket;
+use App\Client;
+class TicketController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        
-        return view('layouts.dashbord.category.index',compact('categories'));
+        $clients = Client::all();
+        return view('layouts.dashbord.ticket.index',compact('clients'));
     }
 
     /**
@@ -26,7 +26,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        
+        $clients = Client::all();
+       
+         return view('layouts.dashbord.ticket.createTicket',compact('clients'));
     }
 
     /**
@@ -37,16 +39,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $categories = new Category([
-          'title' => $request->get('title'),
-          'discription' => $request->get('discription'),
+        
+        $ticket = new Ticket([
+          'produit' => $request->get('produit'),
+          'marque' => $request->get('marque'),
+          'n°série' => $request->get('n°série'),
+          'description_panne' => $request->get('description_panne'),
+          'accesoires_machine' => $request->get('accesoires_machine'),
+          'etat_machine' => $request->get('etat_machine'),
           'url' => $request->get('url')
         ]);
 
-        $categories->save();
+        $ticket->save();
         
-        return redirect('/category');
+        return redirect('/ticket');
     }
+    
 
     /**
      * Display the specified resource.
@@ -67,8 +75,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category= Category::find($id);
-        return view('layouts.dashbord.category.editeCategory',compact('category','id'));
+        //
     }
 
     /**
@@ -78,22 +85,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
-        // $cat_id=$request->id;
-        // Category::find($cat_id)->update([
-        // 'title'=>$request->title,
-        // 'discription'=>$request->discription,
-        // 'url'=>$request->url
-
-        // ]);
-        $category = Category::find($id);
-        $category->title = $request->get('title');
-        $category->discription = $request->get('discription');
-        $category->url = $request->get('url');
-
-        $category->save();
-        return redirect('/category');
+        //
     }
 
     /**
@@ -104,10 +98,25 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $categories = Category::find($id);
-      $categories->delete();
+         $ticket= Ticket::find($id);
+      $ticket->delete();
 
-      return redirect('/category');
-
+      return redirect('/ticket');
     }
-}
+    public function storeClient(Request $request)
+    {
+         $clients = new Client([
+          'nom_client' => $request->get('nom_client'),
+          'numero_tel' => $request->get('numero_tel'),
+          'email_client' => $request->get('email_client'),
+          'adress_client' => $request->get('adress_client'),
+        ]);
+
+        $clients->save();
+        
+        return redirect('/ticket');
+    }
+    
+    
+};
+

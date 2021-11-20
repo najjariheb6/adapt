@@ -572,7 +572,7 @@
                                     <td class="d-none d-lg-table-cell table__td"><span class="text-grey">{{$category->id}}</span>
                                     </td>
                                     <td class="table__td">{{$category->title}}</td>
-                                    <td class="table__td"><span class="text-grey">{{$category->discription}}</span>
+                                    <td class="table__td"><span>{{$category->discription}}</span>
                                     </td>
                                     <td class="table__td"><span> {{$category->url}} </span>
                                     </td>
@@ -647,6 +647,8 @@
             </div>
         </main>
     </div>
+      <form method="POST" action="{{route ('category.store')}}">
+                                {{ csrf_field() }}
     <div class="modal modal--panel modal--right" id="addProduct">
         <div class="modal__overlay" data-dismiss="modal"></div>
         <div class="modal__wrap">
@@ -659,8 +661,7 @@
                     </div>
                     <div class="modal__body">
                         <div class="modal__container">
-                            <form method="POST" action="{{route ('category.store')}}">
-                                {{ csrf_field() }}
+                          
                                 <div class="row row--md">
                                     <div class="col-12 form-group form-group--lg">
                                         <label  class="form-label">Gategory Name</label>
@@ -685,7 +686,7 @@
                         <div class="modal__container">
                             <div class="modal__footer-buttons">
                                 <div class="modal__footer-button">
-                                    <button  type="submit" class="button button--secondary button--block"  ><span class="button__text" >Create</span>
+                                    <button   class="button button--secondary button--block" data-dismiss="modal" data-modal="#addProductSuccess" ><span class="button__text"  >Create</span>
                                     </button>
                                 </div>
                                 <div class="modal__footer-button">
@@ -695,14 +696,15 @@
                             </div>
                         </div>
                     </div>
-                            </form>
+                         
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    {{-- <div class="modal modal-compact modal-success scrollbar-thin" id="addProductSuccess" data-simplebar>
+    {{-- modal --}}
+     <div class="modal modal-compact modal-success scrollbar-thin" id="addProductSuccess" data-simplebar>
         <div class="modal__overlay" data-dismiss="modal"></div>
         <div class="modal__wrap">
             <div class="modal__window">
@@ -726,7 +728,8 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
+    </form>
     <script src="{{asset('js/gsap/gsap.min.js')}}"></script>
     <script src="{{asset('js/gsap/ScrollToPlugin.min.js')}}"></script>
     <script src="{{asset('js/gsap/ScrollTrigger.min.js')}}"></script>

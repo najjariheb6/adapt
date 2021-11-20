@@ -2,116 +2,51 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en" data-theme="light">
 
+{{-- <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arion Admin Dashboard</title>
+    <meta name="description" content="Arion — This is the best dashboard" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Arion — This is the best dashboard" />
+    <meta name="apple-mobile-web-app-title" content="Arion Admin Dashboard" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/apexcharts.css" />
+    <link rel="stylesheet" href="css/tippy/tippy.css" />
+    <link rel="stylesheet" href="css/flatpickr.min.css" />
+    <link rel="stylesheet" href="css/select2.min.css" />
+    <link rel="stylesheet" href="css/quill/quill.snow.css" />
+    <link rel="stylesheet" href="css/quill/quill.core.css" />
+    <link rel="stylesheet" href="css/filepond.min.css" />
+    <link rel="stylesheet" href="css/filepond-plugin-image-preview.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="apple-touch-icon" sizes="57x57" href="img/content/favicons/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="img/content/favicons/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/content/favicons/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="img/content/favicons/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/content/favicons/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="img/content/favicons/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="img/content/favicons/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="img/content/favicons/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/content/favicons/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="img/content/favicons/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/content/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="img/content/favicons/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/content/favicons/favicon-16x16.png" />
+    <!-- <link rel="manifest" href="img/content/favicons/manifest.json" />-->
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+</head> --}}
 
-<head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="MobileOptimized" content="320" />
-        <meta name="HandheldFriendly" content="True" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Adapt Admin Dashboard</title>
-        <meta name="description" content="Arion — This is the best dashboard" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta
-            name="application-name"
-            content="Arion — This is the best dashboard"
-        />
-        <meta
-            name="apple-mobile-web-app-title"
-            content="Arion Admin Dashboard"
-        />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <link rel="stylesheet" href="{{ asset('') }}/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="{{ asset('') }}/css/apexcharts.css" />
-        <link rel="stylesheet" href="{{ asset('') }}/css/tippy/tippy.css " />
-        <link rel="stylesheet" href="{{ asset('') }}/css/flatpickr.min.css " />
-        <link rel="stylesheet" href="{{ asset('') }}/css/select2.min.css " />
-        <link rel="stylesheet" href="{{ asset('') }}/css/quill/quill.snow.css " />
-        <link rel="stylesheet" href="{{ asset('') }}/css/quill/quill.core.css " />
-        <link rel="stylesheet" href="{{ asset('') }}/css/filepond.min.css " />
-        <link
-            rel="stylesheet"
-            href="{{ asset('') }}/css/filepond-plugin-image-preview.min.css"
-        />
-        <link rel="stylesheet" href="{{ asset('') }}/css/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="{{ asset('') }}/css/style.css" />
-        <link
-            rel="apple-touch-icon"
-            sizes="57x57"
-            href="img/content/favicons/apple-icon-57x57.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="60x60"
-            href="img/content/favicons/apple-icon-60x60.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="72x72"
-            href="img/content/favicons/apple-icon-72x72.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="img/content/favicons/apple-icon-76x76.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="114x114"
-            href="img/content/favicons/apple-icon-114x114.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="120x120"
-            href="img/content/favicons/apple-icon-120x120.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="144x144"
-            href="img/content/favicons/apple-icon-144x144.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="img/content/favicons/apple-icon-152x152.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="img/content/favicons/apple-icon-180x180.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="img/content/favicons/android-icon-192x192.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="img/content/favicons/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="96x96"
-            href="img/content/favicons/favicon-96x96.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="img/content/favicons/favicon-16x16.png"
-        />
-        <!-- <link rel="manifest" href="img/content/favicons/manifest.json" />-->
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-        <meta name="theme-color" content="#ffffff" />
-    </head>
-
+@include('layouts.dashbord.head')
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important;"
     class="root-svg-symbols-element">
@@ -503,54 +438,310 @@
     <div class="page-wrapper">
         @include('layouts.dashbord.header')
         @include('layouts.dashbord.sideBar')
-      <main class="page-content">
+        <main class="page-content">
             <div class="container">
                 <div class="page-header">
-                    <h1 class="page-header__title">Edit Category</h1>
+                    <h1 class="page-header__title">Clients</h1>
                 </div>
-                 <form class="add-product__form" action="{{action('CategoryController@update',$category['id'])}}" method="post">
-                                 {{csrf_field()}}
-                <div class="card add-product card--content-center">
-                    <div class="card__wrapper">
-                        <div class="card__container">
-                           
-                                <div class="add-product__row">
-                                    <input name="_method" type="hidden" value="PATCH">
-                                    <div class="add-product__right">
-                                        <div class="row row--md">
-                                            <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">Category Name</label>
-                                                <div class="input-group">
-                                                    <input class="input" name="title" type="text" placeholder="" value="{{$category->title}}" required>
+                <div class="page-tools">
+                    <div class="page-tools__breadcrumbs">
+                        <div class="breadcrumbs">
+                            <div class="breadcrumbs__container">
+                                <ol class="breadcrumbs__list">
+                                    <li class="breadcrumbs__item">
+                                        <a class="breadcrumbs__link" href="index.html">
+                                            <svg class="icon-icon-home breadcrumbs__icon">
+                                                <use xlink:href="#icon-home"></use>
+                                            </svg>
+                                            <svg class="icon-icon-keyboard-right breadcrumbs__arrow">
+                                                <use xlink:href="#icon-keyboard-right"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="breadcrumbs__item active"><span class="breadcrumbs__link">clients</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div class="page-tools__right">
+                        <ul class="page-tools__right-row nav" role="tablist">
+                            <li class="page-tools__right-item"><a class="button-icon" href="#tab-grid" data-toggle="tab"><span class="button-icon__icon">
+                      <svg class="icon-icon-grid">
+                        <use xlink:href="#icon-grid"></use>
+                      </svg></span></a>
+                            </li>
+                            <li class="page-tools__right-item"><a class="button-icon active" href="#tab-list" data-toggle="tab"><span class="button-icon__icon">
+                      <svg class="icon-icon-list">
+                        <use xlink:href="#icon-list"></use>
+                      </svg></span></a>
+                            </li>
+                        </ul>
+                    </div> --}}
+                </div>
+                <div class="toolbox">
+                    
+                        <div class="toolbox__right col-12 col-lg-auto">
+                            <div class="toolbox__right-row row row--xs flex-nowrap">
+                                <div class="col col-lg-auto">
+                                    <form class="toolbox__search" method="GET">
+                                        <div class="input-group input-group--white input-group--prepend">
+                                            <div class="input-group__prepend">
+                                                <svg class="icon-icon-search">
+                                                    <use xlink:href="#icon-search"></use>
+                                                </svg>
+                                            </div>
+                                            <input class="input" type="text" placeholder="Search Contacts">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-auto ml-auto">
+                                    <button class="button-add button-add--blue" data-modal="#addProduct"><span class="button-add__icon">
+                        <svg class="icon-icon-plus">
+                        <use xlink:href="#icon-plus"></use>
+                        </svg></span><span class="button-add__text"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-wrapper tab-content">
+                    <div class="tab-pane fade show active" id="tab-list">
+                        <div class="contacts-grid">
+                            @foreach($clients as $client)
+                            <div class="contact-card card">
+                                <div class="card__wrapper">
+                                    <div class="card__container">
+                                        <div class="card__body">
+                                            <div class="card__tools-more">
+                                                <button class="items-more__button">
+                                                    <svg class="icon-icon-more">
+                                                        <use xlink:href="#icon-more"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="dropdown-items dropdown-items--right">
+                                                    <div class="dropdown-items__container">
+                                                        <ul class="dropdown-items__list">
+                                                            <li class="dropdown-items__item"><a href= "{{action('ClientController@edit', $client['id'])}} " class="dropdown-items__link"><span class="dropdown-items__link-icon">
+                                      <svg class="icon-icon-task">
+                                        <use xlink:href="#icon-task"></use>
+                                      </svg></span>Edite</a>
+                                                            </li>
+                                                            <form action="{{action('ClientController@destroy',$client->id)}}" method="post">
+                                                             {{ csrf_field() }}
+                                                            <input name="_method" type="hidden" value="DELETE">
+                                                            <li class="dropdown-items__item"><button class="dropdown-items__link" type="submit"><span class="dropdown-items__link-icon">
+                                      <svg class="icon-icon-trash">
+                                        <use xlink:href="#icon-trash"></use>
+                                      </svg></span>Delete</button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">Description</label>
-                                                <input class="input" name="discription" type="text" placeholder="" value="{{$category->discription}}" required>
+                                            <div class="contact-card__avatar">
+                                                <svg viewBox="0 0 252 272" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <g filter="url(#filter0_dd)">
+                                                        <path d="M55 199H197V221C197 221 153.752 224 126 224C98.248 224 55 221 55 221V199Z" fill="white"></path>
+                                                    </g>
+                                                    <g filter="url(#filter1_dd)">
+                                                        <path d="M18.235 43.2287C19.2494 23.1848 35.1848 7.24941 55.2287 6.23501C76.8855 5.13899 104.551 4 126 4C147.449 4 175.114 5.13898 196.771 6.23501C216.815 7.24941 232.751 23.1848 233.765 43.2287C234.861 64.8855 236 92.5512 236 114C236 135.449 234.861 163.114 233.765 184.771C232.751 204.815 216.815 220.751 196.771 221.765C175.114 222.861 147.449 224 126 224C104.551 224 76.8855 222.861 55.2287 221.765C35.1848 220.751 19.2494 204.815 18.235 184.771C17.139 163.114 16 135.449 16 114C16 92.5512 17.139 64.8855 18.235 43.2287Z"
+                                                        fill="url(#imagePattern0)"></path>
+                                                    </g>
+                                                    <defs>
+                                                        <filter id="filter0_dd" x="23" y="183" width="206" height="89" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                            <feOffset dy="8" />
+                                                            <feGaussianBlur stdDeviation="8" />
+                                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                            <feOffset dy="16" />
+                                                            <feGaussianBlur stdDeviation="16" />
+                                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                                            <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow" />
+                                                            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape" />
+                                                        </filter>
+                                                        <filter id="filter1_dd" x="0" y="0" width="252" height="252" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                            <feOffset dy="12" />
+                                                            <feGaussianBlur stdDeviation="8" />
+                                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
+                                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                            <feOffset dy="2" />
+                                                            <feGaussianBlur stdDeviation="2" />
+                                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
+                                                            <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow" />
+                                                            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape" />
+                                                        </filter>
+                                                        <pattern id="imagePattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                            <use xlink:href="#avatarImage0" transform="scale(0.00142857)"></use>
+                                                        </pattern>
+                                                        <image id="avatarImage0" width="700" height="700" xlink:href="img/content/humans-2/item-1.jpg"></image>
+                                                    </defs>
+                                                </svg>
                                             </div>
-                                            <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">URL</label>
-                                                <input class="input" name="url" type="text" placeholder="" value="{{$category->url}}" required>
-                                            </div>
-                                           
+                                            <h4 class="contact-card__title">{{$client->nom_client}}</h4>
+                                            
                                         </div>
-                                        <div class="add-product__submit">
-                                            <div class="modal__footer-button">
-                                                <button class="button button--primary button--block" data-dismiss="modal" 
-                                                type="submit" data-modal="#addProductSuccess"><span class="button__text">Update</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal__footer-button"><a class="button button--secondary button--block" href="{{url ('/category') }}"><span class="button__text">Cancel</span></a>
+                                        <div class="card__footer">
+                                            <div class="card__container">
+                                                <ul class="contact-card__address">
+                                                    <li>
+                                                        <div class="row row--xs justify-content-between">
+                                                            <div class="contact-card__address-left col-auto">
+                                                                <svg class="icon-icon-location">
+                                                                    <use xlink:href="#icon-location"></use>
+                                                                </svg>Location:
+                                                            </div>
+                                                            <div class="col-auto text-light-theme">{{$client->adress_client}}</div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="row row--xs justify-content-between">
+                                                            <div class="contact-card__address-left col-auto">
+                                                                <svg class="icon-icon-email">
+                                                                    <use xlink:href="#icon-email"></use>
+                                                                </svg>Email:
+                                                            </div>
+                                                            <div class="col-auto text-light-theme"><a href="mailto:#">{{$client->email_client}}</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="row row--xs justify-content-between">
+                                                            <div class="contact-card__address-left col-auto">
+                                                                <svg class="icon-icon-phone">
+                                                                    <use xlink:href="#icon-phone"></use>
+                                                                </svg>Phone:
+                                                            </div>
+                                                            <div class="col-auto text-light-theme"><a href="tel:#">{{$client->numero_tel}}</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                           
+                            </div>
+                             @endforeach
+                        </div>
+                        
+                    </div>
+                      
+                    <div class="table-wrapper__footer">
+                        <div class="row">
+                            <div class="table-wrapper__show-result col text-grey"><span class="d-none d-sm-inline-block">Showing</span> 1 to 10 <span class="d-none d-sm-inline-block">of 50 items</span>
+                            </div>
+                            <div class="table-wrapper__pagination col-auto">
+                                <ol class="pagination">
+                                    <li class="pagination__item">
+                                        <a class="pagination__arrow pagination__arrow--prev" href="#">
+                                            <svg class="icon-icon-keyboard-left">
+                                                <use xlink:href="#icon-keyboard-left"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="pagination__item active"><a class="pagination__link" href="#">1</a>
+                                    </li>
+                                    <li class="pagination__item"><a class="pagination__link" href="#">2</a>
+                                    </li>
+                                    <li class="pagination__item"><a class="pagination__link" href="#">3</a>
+                                    </li>
+                                    <li class="pagination__item pagination__item--dots">...</li>
+                                    <li class="pagination__item"><a class="pagination__link" href="#">10</a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a class="pagination__arrow pagination__arrow--next" href="#">
+                                            <svg class="icon-icon-keyboard-right">
+                                                <use xlink:href="#icon-keyboard-right"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+            </div>
+        </main>
+    </div>
+     <form class="add-product__form" method="POST" action="{{action('ClientController@store')}}" >
+                                {{ csrf_field() }}
+    <div class="modal modal--panel modal--right" id="addProduct">
+      
+         {{-- <input name="_method" type="hidden" value="post"> --}}
+        <div class="modal__overlay" data-dismiss="modal"></div>
+        <div class="modal__wrap">
+            <div class="modal__window scrollbar-thin" data-simplebar>
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <div class="modal__container">
+                            <h2 class="modal__title">Add client</h2>
+                        </div>
+                    </div>
+                    <div class="modal__body">
+                         
+                        <div class="modal__container">
+                          
+                                <div class="row row--md">
+                                    <div class="col-12 form-group form-group--lg">
+                                        <label  class="form-label">Nom client</label>
+                                        <div class="input-group">
+                                            <input   class="input" type="text" placeholder="" name="nom_client" value="" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-group form-group--lg">
+                                        <label   class="form-label" >Numero tel</label>
+                                        <div class="input-editor">
+                                            <input  class="input" type="text" placeholder="" name="numero_tel" value="" required>
+                                        </div>
+                                    </div>
+                                     <div class="col-12 form-group form-group--lg">
+                                        <label  class="form-label">Email client</label>
+                                        <div class="input-group">
+                                            <input  class="input" type="text" placeholder="" name="email_client" value="" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-group form-group--lg">
+                                        <label  class="form-label">Adress client</label>
+                                        <div class="input-group">
+                                            <input  class="input" type="text" placeholder="" name="adress_client" value="" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="modal__footer">
+                        <div class="modal__container">
+                            <div class="modal__footer-buttons">
+                                <div class="modal__footer-button">
+                                    <button   class="button button--secondary button--block" data-dismiss="modal" data-modal="#addProductSuccess"><span class="button__text" >Create</span>
+                                    </button>
+                                </div>
+                                <div class="modal__footer-button">
+                                    <button class="button button--secondary button--block" data-dismiss="modal"><span class="button__text">Cancel</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                         
                         </div>
                     </div>
                 </div>
             </div>
-            {{-- <div class="modal modal-compact modal-success scrollbar-thin" id="addProductSuccess" data-simplebar>
+        </div>
+        
+    </div>
+    </form>
+    {{-- modal --}}
+     <div class="modal modal-compact modal-success scrollbar-thin" id="addProductSuccess" data-simplebar>
         <div class="modal__overlay" data-dismiss="modal"></div>
         <div class="modal__wrap">
             <div class="modal__window">
@@ -558,57 +749,57 @@
                     <div class="modal__body">
                         <div class="modal__container">
                             <img class="modal-success__icon" src="img/content/checked-success.svg" alt="#">
-                            <h4 class="modal-success__title">Category was update</h4>
+                            <h4 class="modal-success__title">Category was added</h4>
                         </div>
                     </div>
-                    <div class="modal-compact__buttons ">
-                           <div class="modal-compact__button-item">
-                            <button class="modal-compact__button button" data-dismiss="modal" data-modal="#addProduct"><span class="button__text">Succeess</span>
+                    <div class="modal-compact__buttons">
+                        <div class="modal-compact__button-item">
+                            <button class="modal-compact__button button" data-dismiss="modal" data-modal="#addProduct"><span class="button__text">Add new category</span>
                             </button>
                         </div>
                         <div class="modal-compact__button-item">
-                            <button class="modal-compact__button button" data-dismiss="modal" type="submit"><span class="button__text">Close</span>
+                            <button class="modal-compact__button button" data-dismiss="modal"><span class="button__text">Close</span>
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div> --}}
-         </form>
-        </main>
-        
-    <script src=" {{asset('js/gsap/gsap.min.js')}}"></script>
-    <script src=" {{asset('js/gsap/ScrollToPlugin.min.js')}}"></script>
-    <script src=" {{asset('js/gsap/ScrollTrigger.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/popper.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/jquery.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/bootstrap.bundle.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/imagesloaded.pkgd.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/simplebar.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/tippy-bundle.umd.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/grid/masonry.pkgd.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/grid/isotope.pkgd.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/charts/circle-progress.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/charts/echarts.common.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/charts/apexcharts/apexcharts.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/cleave/cleave.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/cleave/addons/cleave-phone.us.js')}}"></script>
-    <script src=" {{asset('js/vendor/jqvmap/jquery.vmap.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/jqvmap/jquery.vmap.world.js')}}"></script>
-    <script src=" {{asset('js/vendor/jqvmap/jquery.vmap.sampledata.js')}}"></script>
-    <script src=" {{asset('js/vendor/jquery.star-rating-svg.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/calendar/flatpickr/flatpickr.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/calendar/flatpickr/en.js')}}"></script>
-    <script src=" {{asset('js/vendor/select2.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/editors/quill.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/filepond/filepond-plugin-image-preview.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/filepond/filepond.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/swiper-bundle.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/scrollmagic/ScrollMagic.min.js')}}"></script>
-    <script src=" {{asset('js/vendor/scrollmagic/debug.addIndicators.min.js')}}"></script>
-    <script src=" {{asset('js/components.js')}}"></script>
-    <script src=" {{asset('js/common.js')}}"></script>
+    </div>
+     
+      
+      
+    <script src="{{asset('js/gsap/gsap.min.js')}}"></script>
+    <script src="{{asset('js/gsap/ScrollToPlugin.min.js')}}"></script>
+    <script src="{{asset('js/gsap/ScrollTrigger.min.js')}}"></script>
+    <script src="{{asset('js/vendor/popper.min.js')}}"></script>
+    <script src="{{asset('js/vendor/jquery.min.js')}}"></script>
+    <script src="{{asset('js/vendor/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('js/vendor/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{asset('js/vendor/simplebar.min.js')}}"></script>
+    <script src="{{asset('js/vendor/tippy-bundle.umd.min.js')}}"></script>
+    <script src="{{asset('js/vendor/grid/masonry.pkgd.min.js')}}"></script>
+    <script src="{{asset('js/vendor/grid/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('js/vendor/charts/circle-progress.min.js')}}"></script>
+    <script src="{{asset('js/vendor/charts/echarts.common.min.js')}}"></script>
+    <script src="{{asset('js/vendor/charts/apexcharts/apexcharts.min.js')}}"></script>
+    <script src="{{asset('js/vendor/cleave/cleave.min.js')}}"></script>
+    <script src="{{asset('js/vendor/cleave/addons/cleave-phone.us.js')}}"></script>
+    <script src="{{asset('js/vendor/jqvmap/jquery.vmap.min.js')}}"></script>
+    <script src="{{asset('js/vendor/jqvmap/jquery.vmap.world.js')}}"></script>
+    <script src="{{asset('js/vendor/jqvmap/jquery.vmap.sampledata.js')}}"></script>
+    <script src="{{asset('js/vendor/jquery.star-rating-svg.min.js')}}"></script>
+    <script src="{{asset('js/vendor/calendar/flatpickr/flatpickr.min.js')}}"></script>
+    <script src="{{asset('js/vendor/calendar/flatpickr/en.js')}}"></script>
+    <script src="{{asset('js/vendor/select2.min.js')}}"></script>
+    <script src="{{asset('js/vendor/editors/quill.min.js')}}"></script>
+    <script src="{{asset('js/vendor/filepond/filepond-plugin-image-preview.min.js')}}"></script>
+    <script src="{{asset('js/vendor/filepond/filepond.min.js')}}"></script>
+    <script src="{{asset('js/vendor/swiper-bundle.min.js')}}"></script>
+    <script src="{{asset('js/vendor/scrollmagic/ScrollMagic.min.js')}}"></script>
+    <script src="{{asset('js/vendor/scrollmagic/debug.addIndicators.min.js')}}"></script>
+    <script src="{{asset('js/components.js')}}"></script>
+    <script src="{{asset('js/common.js')}}"></script>
 </body>
 
 </html>

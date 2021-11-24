@@ -21,7 +21,9 @@ class CreateTicketsTable extends Migration
             $table->string('accesoires_machine');
             $table->string('etat_machine');
             $table->string('n°série');
-           
+            $table->string('mode');
+            $table->string('status')->default('Non examiné');
+            $table->string('references');
             $table->integer('client_id')->unsigned();
             $table->foreign('client_id')->references('id')->on('clients');
             $table->timestamps();

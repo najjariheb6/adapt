@@ -1400,6 +1400,23 @@ html[data-theme='light'] .button--secondary:hover {
           box-shadow: 0px 8px 16px rgba(0, 129, 255, 0);
 }
 
+.button-add--red {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  -webkit-box-shadow: 0px 8px 16px rgba(255, 61, 87, 1);
+          box-shadow: 0px 8px 16px rgba(255, 61, 87, 1);
+}
+
+.button-add--red:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.button-add--red:active {
+  background-color: var(--blue-color-control-1);
+  -webkit-box-shadow: 0px 8px 16px rgba(255, 61, 87, 1);
+          box-shadow: 0px 8px 16px rgba(255, 61, 87, 1);
+}
 .button-add__icon {
   width: 24px;
   height: 24px;

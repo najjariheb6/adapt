@@ -45,8 +45,9 @@ class ClientController extends Controller
         ]);
 
         $clients->save();
-        
-        return redirect('/client');
+        session()->flash('success', 'Le client a été bien enregistrer');
+        // echo url()->previous();die;
+        return redirect()->back();
     }
 
     /**
@@ -81,12 +82,13 @@ class ClientController extends Controller
      */
     public function update(Request $request,$id)
     {
-         $clients = Client::find($id);
+        $clients = Client::find($id);
         $clients->nom_client = $request->get('nom_client');
         $clients->numero_tel = $request->get('numero_tel');
         $clients->email_client = $request->get('email_client');
         $clients->adress_client = $request->get('adress_client');
         $clients->save();
+        // session()->flash('success', 'Le client a été bien modifier');
         return redirect('/client');
     }
 

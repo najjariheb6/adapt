@@ -14,8 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        // $categories = Category::where('parent_id', '=', 0)->get();
+        // $allCategories = Category::pluck('title','discription','url','id')->all();
         $categories = Category::all();
-        
         return view('layouts.dashbord.category.index',compact('categories'));
     }
 
@@ -80,13 +81,6 @@ class CategoryController extends Controller
      */
     public function update(Request $request,$id)
     {
-        // $cat_id=$request->id;
-        // Category::find($cat_id)->update([
-        // 'title'=>$request->title,
-        // 'discription'=>$request->discription,
-        // 'url'=>$request->url
-
-        // ]);
         $category = Category::find($id);
         $category->title = $request->get('title');
         $category->discription = $request->get('discription');
@@ -109,5 +103,11 @@ class CategoryController extends Controller
 
       return redirect('/category');
 
+    }
+     public function manageCategory()
+    {
+        $categories = Category::where('parent_id', '=', 0)->get();
+        $allCategories = Category::pluck('title','discription','url','id')->all();
+        return view('categoryTreeview',compact('categories','allCategories'));
     }
 }

@@ -506,7 +506,7 @@
       <main class="page-content">
             <div class="container">
                 <div class="page-header">
-                    <h1 class="page-header__title">Edit Category</h1>
+                    <h1 class="page-header__title">Modifier Category</h1>
                 </div>
                  <form class="add-product__form" action="{{action('CategoryController@update',$category['id'])}}" method="post">
                                  {{csrf_field()}}
@@ -519,7 +519,7 @@
                                     <div class="add-product__right">
                                         <div class="row row--md">
                                             <div class="col-12 form-group form-group--lg">
-                                                <label class="form-label">Category Name</label>
+                                                <label class="form-label">Nom Catégorie</label>
                                                 <div class="input-group">
                                                     <input class="input" name="title" type="text" placeholder="" value="{{$category->title}}" required>
                                                 </div>
@@ -537,10 +537,10 @@
                                         <div class="add-product__submit">
                                             <div class="modal__footer-button">
                                                 <button class="button button--primary button--block" data-dismiss="modal" 
-                                                type="submit" data-modal="#addProductSuccess"><span class="button__text">Update</span>
+                                                type="submit" data-modal="#addProductSuccess"><span class="button__text">Modifier</span>
                                                 </button>
                                             </div>
-                                            <div class="modal__footer-button"><a class="button button--secondary button--block" href="{{url ('/category') }}"><span class="button__text">Cancel</span></a>
+                                            <div class="modal__footer-button"><a class="button button--secondary button--block" href="{{url ('/category') }}"><span class="button__text">Annuler</span></a>
                                             </div>
                                         </div>
                                     </div>

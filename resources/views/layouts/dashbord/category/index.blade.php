@@ -399,7 +399,7 @@
         <main class="page-content">
             <div class="container">
                 <div class="page-header">
-                    <h1 class="page-header__title">Gategory</h1>
+                    <h1 class="page-header__title">Gategorie</h1>
                 </div>
                 <div class="page-tools">
                     <div class="page-tools__breadcrumbs">
@@ -462,7 +462,7 @@
                                 <div class="form-group form-group--inline col col-sm-auto">
                                     <div class="input-group input-group--white input-group--append">
                                         <select class="input js-input-select" data-placeholder="">
-                                            <option value="1" selected="selected">All Categories
+                                            <option value="1" selected="selected">Toutes catégories
                                             </option>
                                             <option value="2">MacBook
                                             </option>
@@ -486,8 +486,8 @@
                         <svg class="icon-icon-keyboard-down">
                           <use xlink:href="#icon-keyboard-down"></use>
                         </svg></span>
-                                        <div class="dropdown-menu dropdown-menu--right dropdown-menu--fluid js-dropdown-select"><a class="dropdown-menu__item active" href="#" tabindex="0" data-value="All status"><span class="marker-item"></span> All status</a>
-                                            <a class="dropdown-menu__item" href="#" tabindex="0" data-value="Published"><span class="marker-item color-green"></span> Published</a><a class="dropdown-menu__item" href="#" tabindex="0" data-value="Deleted"><span class="marker-item color-red"></span> Deleted</a>
+                                        <div class="dropdown-menu dropdown-menu--right dropdown-menu--fluid js-dropdown-select"><a class="dropdown-menu__item active" href="#" tabindex="0" data-value="All status"><span class="marker-item"></span> Tous les statuts</a>
+                                            <a class="dropdown-menu__item" href="#" tabindex="0" data-value="Published"><span class="marker-item color-green"></span> Publié</a><a class="dropdown-menu__item" href="#" tabindex="0" data-value="Deleted"><span class="marker-item color-red"></span> Supprimé</a>
                                         </div>
                                     </div>
                                 </div>
@@ -545,14 +545,12 @@
                                     </th>
                                     <th class="d-none d-lg-table-cell"><span>ID</span>
                                     </th>
-                                    <th class="table__th-sort"><span class="align-middle">Category Name</span><span class="sort sort--down"></span>
+                                    <th class="table__th-sort"><span class="align-middle">Nom de catégorie</span><span class="sort sort--down"></span>
                                     </th>
-                                    <th class="table__th-sort"><span class="align-middle">discription</span><span class="sort sort--down"></span>
+                                    <th class="table__th-sort"><span class="align-middle">Description</span><span class="sort sort--down"></span>
                                     </th>
                                     <th class="table__th-sort"><span class="align-middle">Url</span><span class="sort sort--down"></span>
                                     </th>
-                                    {{-- <th class="table__th-sort d-none d-lg-table-cell"><span class="align-middle">Date</span><span class="sort sort--down"></span>
-                                    </th> --}}
                                     <th class="table__actions"></th>
                                 </tr>
                             </thead>
@@ -574,7 +572,7 @@
                                     <td class="table__td">{{$category->title}}</td>
                                     <td class="table__td"><span>{{$category->discription}}</span>
                                     </td>
-                                    <td class="table__td"><span> {{$category->url}} </span>
+                                    <td class="d-none d-lg-table-cell table__td"><span> {{$category->url}} </span>
                                     </td>
                                     <td class="table__td table__actions">
                                         <div class="items-more">
@@ -586,10 +584,11 @@
                                             <div class="dropdown-items dropdown-items--right">
                                                 <div class="dropdown-items__container">
                                                     <ul class="dropdown-items__list">
-                                                        <li class="dropdown-items__item"><a href= "{{action('CategoryController@edit', $category['id'])}} " class="dropdown-items__link" ><span class="dropdown-items__link-icon">
+                                                        <li class="dropdown-items__item">
+                                                            <a href= "{{action('CategoryController@edit', $category['id'])}} " class="dropdown-items__link" ><span class="dropdown-items__link-icon">
                                     <svg class="icon-icon-task">
                                       <use xlink:href="#icon-task"></use>
-                                    </svg></span>Edit</a>
+                                    </svg></span>Modifier</a>
                                                         </li>
                                                         <form action="{{action('CategoryController@destroy',$category->id)}}" method="post">
                                                              {{ csrf_field() }}
@@ -597,7 +596,7 @@
                                                         <li class="dropdown-items__item"><button id="submit" type="submit"   class="dropdown-items__link"><span class="dropdown-items__link-icon">
                                     <svg class="icon-icon-trash">
                                       <use xlink:href="#icon-trash"></use>
-                                    </svg></span>Delete</button>
+                                    </svg></span>Supprimer</button>
                                                         </li>
                                                         </form>
                                                     </ul>
@@ -610,9 +609,11 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="transform: translate3d(0px, 0px, 0px); display: none; width: 524px;"></div></div>
+                    <div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="transform: translate3d(0px, 0px, 0px); display: none;"></div></div>
                     <div class="table-wrapper__footer">
                         <div class="row">
-                            <div class="table-wrapper__show-result col text-grey"><span class="d-none d-sm-inline-block">Showing</span> 1 to 10 <span class="d-none d-sm-inline-block">of 50 items</span>
+                            <div class="table-wrapper__show-result col text-grey"><span class="d-none d-sm-inline-block">Affichage</span> 1 to 10 <span class="d-none d-sm-inline-block">of 50 items</span>
                             </div>
                             <div class="table-wrapper__pagination col-auto">
                                 <ol class="pagination">
@@ -656,7 +657,7 @@
                 <div class="modal__content">
                     <div class="modal__header">
                         <div class="modal__container">
-                            <h2 class="modal__title">Add Gategory</h2>
+                            <h2 class="modal__title">Ajouter Gatégorie</h2>
                         </div>
                     </div>
                     <div class="modal__body">
@@ -664,7 +665,7 @@
                           
                                 <div class="row row--md">
                                     <div class="col-12 form-group form-group--lg">
-                                        <label  class="form-label">Gategory Name</label>
+                                        <label  class="form-label">Nom de Gatégorie </label>
                                         <div class="input-group">
                                             <input   class="input" type="text" placeholder="" name="title" value="" required>
                                         </div>
@@ -681,16 +682,20 @@
                                             <input  class="input" type="text" placeholder="" name="url" value="" required>
                                         </div>
                                     </div>
+                                    {{-- <div class="col-12 form-group form-group--lg {{ $errors->has('parent_id') ? 'has-error' : '' }}">
+                                    <label  class="form-label">Category</label>
+                                    <select class='form-control', placeholder='Select Category' {{'parent_id',$categories, old('parent_id')}} ></select>
+                                    </div> --}}
                                 </div>
                                  <div class="modal__footer">
                         <div class="modal__container">
                             <div class="modal__footer-buttons">
                                 <div class="modal__footer-button">
-                                    <button   class="button button--secondary button--block" data-dismiss="modal" data-modal="#addProductSuccess" ><span class="button__text"  >Create</span>
+                                    <button   class="button button--secondary button--block" data-dismiss="modal" data-modal="#addProductSuccess" ><span class="button__text"  >Créer</span>
                                     </button>
                                 </div>
                                 <div class="modal__footer-button">
-                                    <button class="button button--secondary button--block" data-dismiss="modal"><span class="button__text">Cancel</span>
+                                    <button class="button button--secondary button--block" data-dismiss="modal"><span class="button__text">Annuler</span>
                                     </button>
                                 </div>
                             </div>
@@ -712,16 +717,17 @@
                     <div class="modal__body">
                         <div class="modal__container">
                             <img class="modal-success__icon" src="img/content/checked-success.svg" alt="#">
-                            <h4 class="modal-success__title">Category was added</h4>
+                            <h4 class="modal-success__title">La catégorie a été ajoutée</h4>
                         </div>
                     </div>
                     <div class="modal-compact__buttons">
                         <div class="modal-compact__button-item">
-                            <button class="modal-compact__button button" data-dismiss="modal" data-modal="#addProduct"><span class="button__text">Add new category</span>
+                            <button class="modal-compact__button button" data-dismiss="modal" data-modal="#addProduct"><span class="button__text">
+Ajouter catégorie</span>
                             </button>
                         </div>
                         <div class="modal-compact__button-item">
-                            <button class="modal-compact__button button" data-dismiss="modal"><span class="button__text">Close</span>
+                            <button class="modal-compact__button button" data-dismiss="modal"><span class="button__text">Fermer</span>
                             </button>
                         </div>
                     </div>

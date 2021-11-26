@@ -25,6 +25,8 @@ class CreateInterventionsTable extends Migration
             $table->float('net_a_payer');
             $table->float('discount');
             $table->float('diagnostic');
+            $table->integer('tickets_id')->unsigned();
+            $table->foreign('tickets_id')->references('id')->on('tickets');
             $table->timestamps();
         });
     }

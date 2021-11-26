@@ -12,6 +12,10 @@ class Ticket extends Model
     public function client(){
         return $this->belongsTo(Client::class);
     }
+    public function intervention()
+    {
+        return $this->hasMany(Intervention::class);
+    }
   
 }
 

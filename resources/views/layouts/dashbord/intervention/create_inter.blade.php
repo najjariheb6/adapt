@@ -7,7 +7,7 @@
 <main class="page-content page-content--order-header">
     <div class="container">
         <div class="page-header">
-            <h3 class="page-header__subtitle d-lg-none">Tickets Details</h3>
+            <h3 class="page-header__subtitle d-lg-none">Fiche d'intervention</h3>
             <h1 class="page-header__title">Tickets <span class="text-grey">#{{$tickets->references}}</span></h1>
         </div>
         <div class="page-tools">
@@ -155,7 +155,7 @@
                             <col>
                         </colgroup>
                         <thead class="table__header">
-                            <tr class="table__header-row">
+                            {<tr class="table__header-row">
                                 <th><span class="text-nowrap">PRODUIT</span>
                                 </th>
                                 <th class="text-center"><span>REF</span>
@@ -164,23 +164,23 @@
                                 </th>
                                 <th class="text-center"><span>QUANTITE</span>
                                 </th>
-                                <th><span>TOTAL</span>
+                                <th class="text-center"><span>TOTAL</span>
                                 </th>
                                 <th class="table__actions"></th>
-                            </tr>
+                            </tr>}
                         </thead>
                         <tbody id="products_tbody">
-                            <tr class="table__row">
+                            {{--<tr class="table__row">
                                 <td editable class="table__td">
-                                    <div contenteditable="true" class="input input--edit mw-200 text-light-theme">
-                                        #
+                                    <div class="input input--edit mw-200 text-light-theme y_prod_name" contenteditable="true">
+                                        @
                                     </div>
                                 </td>
                                 <td class="table__td text-center text-dark-theme">
                                     <div class="d-inline-block">
                                         <div class="input-group input-group--prepend-xs">
-                                            <div class="input-group__prepend">@</div>
-                                            <div class="input input--edit" contenteditable="true"></div>
+                                            <div class="input-group__prepend">#</div>
+                                            <div class="input input--edit y_prod_ref" contenteditable="true"></div>
                                         </div>
                                     </div>
                                 </td>
@@ -195,7 +195,14 @@
                                 <td class="table__td text-center x_prod_qte">
                                     <input class="input input--edit text-center text-light-theme y_prod_qte" type="number" value="1" min="1" max="999">
                                 </td>
-                                <td class="table__td text-nowrap text-dark-theme x_prod_total">$</td>
+                                <td class="table__td text-center text-dark-theme">
+                                    <div class="d-inline-block">
+                                        <div class="input-group input-group--prepend-xs">
+                                            <div class="input-group__prepend">$</div>
+                                            <div class="input input--edit y_prod_total">0</div>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="table__td table__actions text-dark-theme">
                                     <button class="table__remove prod_remove" type="button">
                                         <svg class="icon-icon-trash">
@@ -203,7 +210,7 @@
                                         </svg>
                                     </button>
                                 </td>
-                            </tr>
+                            </tr>--}}
                             <!--{{-- <tr class="table__row">
                                 <td class="table__td">
                                     <div class="mw-200"><span class="text-light-theme">MacBook Pro 15” (Mid 2018)</span>
@@ -261,28 +268,52 @@
                     <div class="card__container">
                         <div class="row gutter-bottom-sm justify-content-end">
                             <div class="card-order__footer-submit col-12 col-sm">
-                                <button class="button button--secondary add-prod" type="button"><span class="button__text">Ajouter Produit</span>
+                                <button class="button button--secondary add-prod" type="button">
+                                    <span class="button__text">Ajouter Produit</span>
+                                </button>
+                                <button class="button button--secondary btn_calculate" type="button">
+                                    <span class="button__text">Calculer</span>
+                                </button>
+                                <button class="button button--secondary iheb_alert" type="button" onclick="alert('hello')">
+                                    <span class="button__text">Alert</span>
                                 </button>
                             </div>
                             <div class="col-auto">
                                 <ul class="card-order__total">
                                     <li class="card-order__total-item">
                                         <div class="card-order__total-title">Subtotal:</div>
-                                        <div class="card-order__total-value">$75,000</div>
+                                        <!-- <div class="card-order__total-value" id="subtotal">$0</div> -->
+                                        <div class="input-group">$
+                                            <div class="input input--edit" id="subtotal">0</div>
+                                        </div>
                                     </li>
                                     <li class="card-order__total-item">
                                         <div class="card-order__total-title">TAX(%):</div>
-                                        <div class="card-order__total-value">$90,000</div>
+                                        <div class="input-group">%
+                                            <div class="input input--edit" id="tax" contenteditable="true">0</div>
+                                        </div>
                                     </li>
                                     <li class="card-order__total-item">
                                         <div class="card-order__total-title">Remise(%):</div>
-                                        <div class="card-order__total-value">10%</div>
+                                        <div class="input-group">%
+                                            <div class="input input--edit" id="discount" contenteditable="true">0</div>
+                                        </div>
+                                    </li>
+                                    <li class="card-order__total-item">
+                                        <div class="card-order__total-title">Timbre:</div>
+                                        <div class="input-group">$
+                                            <div class="input input--edit" id="timbre" contenteditable="true">0</div>
+                                        </div>
                                     </li>
                                     <li class="card-order__total-item card-order__total-footer">
                                         <div class="card-order__total-title">total:</div>
-                                        <div class="card-order__total-value">$81,000</div>
+                                        <div class="card-order__total-value">$ &nbsp;0</div>
                                     </li>
                                 </ul>
+                                <br>
+                                <button class="button button--primary btn_calculate" type="button">
+                                    <span class="button__text">Enregistrer</span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -293,5 +324,8 @@
 </main>
 @endsection
 @section('script')
-<script src=" {{asset('js/validation.js')}}"></script>
+<script src="{{asset('js\validation.js')}}"></script>
+<!-- <script>
+    $(".iheb_alert").trigger("click");
+</script> -->
 @endsection

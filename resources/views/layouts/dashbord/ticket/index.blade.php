@@ -239,125 +239,136 @@
                                             <ul class="dropdown-items__list">
                                                 <li class="dropdown-items__item">
                                                     <a class="dropdown-items__link" href="{{action('TicketController@show', $ticket['id'])}} ">
-                                                        <span class="dropdown-items__link-icon">
-                                                            <svg class="icon-icon-view">
-                                                                <use xlink:href="#icon-view"></use>
-                                                            </svg>
-                                                        </span>Details
-                                                    </a>
-                                                </li>
-                                                <li class="dropdown-items__item">
-                                                    <a class="dropdown-items__link" href="{{action('TicketController@edit', $ticket['id'])}} ">
-                                                        <span class="dropdown-items__link-icon">
-                                                            <svg class="icon-icon-archive">
-                                                                <use xlink:href="#icon-archive"></use>
-                                                            </svg>
-                                                        </span>Edite
-                                                    </a>
-                                                </li>
-                                                <form action="{{action('TicketController@destroy',$ticket->id)}}" method="post">
-                                                    {{ csrf_field() }}
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <li class="dropdown-items__item">
-                                                        <button id="submit" type="submit" class="dropdown-items__link">
-                                                            <span class="dropdown-items__link-icon">
-                                                                <svg class="icon-icon-trash">
-                                                                    <use xlink:href="#icon-trash"></use>
-                                                                </svg>
-                                                            </span>Delete
-                                                        </button>
-                                                    </li>
-                                                </form>
-                                            </ul>
-                                        </div>
-                                    </div>--}}
-                                    <div class="col-auto">
-                                        <a href="{{action('TicketController@show', $ticket['id'])}} ">
-                                            <button class="button-add button-add--blue ">
-                                                <span class="button-add__icon">
-                                                    <svg class="icon-icon-view">
-                                                        <use xlink:href="#icon-view"></use>
-                                                    </svg>
-                                                </span>
-                                            </button>
+                                    <span class="dropdown-items__link-icon">
+                                        <svg class="icon-icon-view">
+                                            <use xlink:href="#icon-view"></use>
+                                        </svg>
+                                    </span>Details
+                                    </a>
+                                    </li>
+                                    <li class="dropdown-items__item">
+                                        <a class="dropdown-items__link" href="{{action('TicketController@edit', $ticket['id'])}} ">
+                                            <span class="dropdown-items__link-icon">
+                                                <svg class="icon-icon-archive">
+                                                    <use xlink:href="#icon-archive"></use>
+                                                </svg>
+                                            </span>Edite
                                         </a>
-                                    </div>
-                                    <div class="col-auto">
-                                        <a href="{{action('TicketController@edit', $ticket['id'])}} ">
-                                            <button class="button-add button-add--blue ">
-                                                <span class="button-add__icon">
-                                                    <svg class="icon-icon-archive">
-                                                        <use xlink:href="#icon-action"></use>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </a>
-                                    </div>
-                                    <div class="col-auto">
-                                        <a href="{{action('InterventionController@edit', $ticket['id'])}} ">
-                                            <button class="button-add button-add--blue ">
-                                                <span class="button-add__icon">
-                                                    <svg class="icon-icon-bill">
-                                                        <use xlink:href="#icon-bill"></use>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </a>
-                                    </div>
-                                    <div class="col-auto">
-                                        <form action="{{action('TicketController@destroy',$ticket->id)}}" method="post">
-                                            {{ csrf_field() }}
-                                            <input name="_method" type="hidden" value="DELETE">
-                                            <button type="submit" class="button-add button-add--blue ">
-                                                <span class="button-add__icon">
+                                    </li>
+                                    <form action="{{action('TicketController@destroy',$ticket->id)}}" method="post">
+                                        {{ csrf_field() }}
+                                        <input name="_method" type="hidden" value="DELETE">
+                                        <li class="dropdown-items__item">
+                                            <button id="submit" type="submit" class="dropdown-items__link">
+                                                <span class="dropdown-items__link-icon">
                                                     <svg class="icon-icon-trash">
                                                         <use xlink:href="#icon-trash"></use>
                                                     </svg>
-                                                </span>
+                                                </span>Delete
                                             </button>
-                                        </form>
-                                    </div>
+                                        </li>
+                                    </form>
+                                    </ul>
                                 </div>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+            </div>--}}
+            <div class="col-auto">
+                <a href="{{action('TicketController@show', $ticket['id'])}} ">
+                    <button class="button-add button-add--blue ">
+                        <span class="button-add__icon">
+                            <svg class="icon-icon-view">
+                                <use xlink:href="#icon-view"></use>
+                            </svg>
+                        </span>
+                    </button>
+                </a>
             </div>
-            <div class="table-wrapper__footer">
-                <div class="row">
-                    <div class="table-wrapper__show-result col text-grey"><span class="d-none d-sm-inline-block">Voir</span> 1 Vers 10 <span class="d-none d-sm-inline-block">de 50 tickets</span>
-                    </div>
-                    <div class="table-wrapper__pagination col-auto">
-                        <ol class="pagination">
-                            <li class="pagination__item">
-                                <a class="pagination__arrow pagination__arrow--prev" href="#">
-                                    <svg class="icon-icon-keyboard-left">
-                                        <use xlink:href="#icon-keyboard-left"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="pagination__item active"><a class="pagination__link" href="#">1</a>
-                            </li>
-                            <li class="pagination__item"><a class="pagination__link" href="#">2</a>
-                            </li>
-                            <li class="pagination__item"><a class="pagination__link" href="#">3</a>
-                            </li>
-                            <li class="pagination__item pagination__item--dots">...</li>
-                            <li class="pagination__item"><a class="pagination__link" href="#">10</a>
-                            </li>
-                            <li class="pagination__item">
-                                <a class="pagination__arrow pagination__arrow--next" href="#">
-                                    <svg class="icon-icon-keyboard-right">
-                                        <use xlink:href="#icon-keyboard-right"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
+            <div class="col-auto">
+                <a href="{{url('/ticket/pdf-view', $ticket->id)}} ">
+                    <button class="button-add button-add--blue ">
+                        <span class="button-add__icon">
+                            <svg class="icon-icon-print">
+                                <use xlink:href="#icon-print"></use>
+                            </svg>
+                        </span>
+                    </button>
+                </a>
+            </div>
+            <div class="col-auto">
+                <a href="{{action('TicketController@edit', $ticket['id'])}} ">
+                    <button class="button-add button-add--blue ">
+                        <span class="button-add__icon">
+                            <svg class="icon-icon-archive">
+                                <use xlink:href="#icon-action"></use>
+                            </svg>
+                        </span>
+                    </button>
+                </a>
+            </div>
+            <div class="col-auto">
+                <a href="{{action('InterventionController@edit', $ticket['id'])}} ">
+                    <button class="button-add button-add--blue ">
+                        <span class="button-add__icon">
+                            <svg class="icon-icon-bill">
+                                <use xlink:href="#icon-bill"></use>
+                            </svg>
+                        </span>
+                    </button>
+                </a>
+            </div>
+            <div class="col-auto">
+                <form action="{{action('TicketController@destroy',$ticket->id)}}" method="post">
+                    {{ csrf_field() }}
+                    <input name="_method" type="hidden" value="DELETE">
+                    <button type="submit" class="button-add button-add--blue ">
+                        <span class="button-add__icon">
+                            <svg class="icon-icon-trash">
+                                <use xlink:href="#icon-trash"></use>
+                            </svg>
+                        </span>
+                    </button>
+                </form>
             </div>
         </div>
+        </td>
+        </tr>
+        @endforeach
+        </tbody>
+        </table>
+    </div>
+    <div class="table-wrapper__footer">
+        <div class="row">
+            <div class="table-wrapper__show-result col text-grey"><span class="d-none d-sm-inline-block">Voir</span> 1 Vers 10 <span class="d-none d-sm-inline-block">de 50 tickets</span>
+            </div>
+            <div class="table-wrapper__pagination col-auto">
+                <ol class="pagination">
+                    <li class="pagination__item">
+                        <a class="pagination__arrow pagination__arrow--prev" href="#">
+                            <svg class="icon-icon-keyboard-left">
+                                <use xlink:href="#icon-keyboard-left"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="pagination__item active"><a class="pagination__link" href="#">1</a>
+                    </li>
+                    <li class="pagination__item"><a class="pagination__link" href="#">2</a>
+                    </li>
+                    <li class="pagination__item"><a class="pagination__link" href="#">3</a>
+                    </li>
+                    <li class="pagination__item pagination__item--dots">...</li>
+                    <li class="pagination__item"><a class="pagination__link" href="#">10</a>
+                    </li>
+                    <li class="pagination__item">
+                        <a class="pagination__arrow pagination__arrow--next" href="#">
+                            <svg class="icon-icon-keyboard-right">
+                                <use xlink:href="#icon-keyboard-right"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 </main>
 @endsection

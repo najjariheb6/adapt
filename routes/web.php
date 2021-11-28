@@ -33,7 +33,12 @@ Route::post('add-category',['as'=>'add.category','uses'=>'CategoryController@add
 Route::resource('ticket', 'TicketController');
 Route::resource('client', 'ClientController');
 Route::post('/ticket/addclient','TicketController@addClient');
+Route::get('ticket/pdf-view/{id}','TicketController@pdfView');
+Route::get('ticket/pdf-save/{id}','TicketController@pdfSave');
 
 // intervention
 Route::resource('intervention', 'InterventionController');
-
+Route::post('intervention/new', 'InterventionController@new');
+Route::get('intervention/pdf-view/{id}','InterventionController@pdfView');
+Route::get('intervention/pdf-save/{id}','InterventionController@pdfSave');
+       

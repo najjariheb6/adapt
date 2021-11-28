@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Ticket;
 use App\Client;
-
+use PDF;
 class TicketController extends Controller
 {
     /**
@@ -69,9 +69,8 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        $clients = Client::all();
-        $tickets = Ticket::find($id);
-        return view('layouts.dashbord.ticket.detail_Ticket', compact('clients', 'id', 'tickets'));
+        $tickets = Ticket::with('intervention')->find($id);
+        return view('layouts.dashbord.ticket.detail_Ticket', compact('id', 'tickets'));
     }
 
     /**
@@ -127,7 +126,20 @@ class TicketController extends Controller
 
         return redirect('/ticket');
     }
-
+    public function pdfview($id)
+    {
+        $ticket_details = Ticket::find($id);
+        // echo"<pre>";print_r($ticket_details);die;
+        return view('layouts.dashbord.ticket.pdfview', ['ticket' => $ticket_details]);
+    }
+    public function pdfSave($id)
+    {
+        $ticket_details = Ticket::find($id);
+        $pdf = PDF::loadView('layouts.dashbord.ticket.pdfview', ['ticket' => $ticket_details])
+        ->setPaper('a4', 'portrait');
+        $file='recu_'.$ticket_details->id.'.pdf';
+        return $pdf->download($file);
+    }
 
 
 

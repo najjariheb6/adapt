@@ -102,7 +102,6 @@
                         </button>
                     </div>
                     <div class="card__container">
-
                         <h2 class="card__title">Machine</h2>
                         <div class="row gutter-bottom-sm">
                             <div class="col">
@@ -110,6 +109,7 @@
                                     <li><b>Produit:</b> {{$tickets->produit}}</li>
                                     <li><b>Marque:</b> {{$tickets->marque}}</li>
                                     <li><b>N°série:</b> {{$tickets->n°série}}</li>
+                                    <input type="hidden" id="ticket_id" value="{{$tickets->id}}">
                                 </ul>
                             </div>
                             <div class="col">
@@ -280,7 +280,7 @@
                                         <!-- <div class="card-order__total-value" id="subtotal">$0</div> -->
                                         <div class="input-group">$
                                             <div class="input input--edit">
-                                                <input style="width: 40px !important;" value="0" disabled id="subtotal" type="text"  name="subtotal">
+                                                <input style="width: 40px !important;" value="0" disabled id="subtotal" type="text" name="subtotal">
                                             </div>
                                         </div>
                                     </li>
@@ -288,7 +288,7 @@
                                         <div class="card-order__total-title">TAX(%):</div>
                                         <div class="input-group">%
                                             <div class="input input--edit">
-                                                <input style="width: 40px !important;" value="0" id="tax" type="number" min="0"name="tax">
+                                                <input style="width: 40px !important;" value="0" id="tax" type="number" min="0" name="tax">
                                             </div>
                                         </div>
                                     </li>
@@ -296,7 +296,7 @@
                                         <div class="card-order__total-title">Remise(%):</div>
                                         <div class="input-group">%
                                             <div class="input input--edit">
-                                                <input style="width: 40px !important;" value="0" id="discount" type="number" min="0"name="discount">
+                                                <input style="width: 40px !important;" value="0" id="discount" type="number" min="0" name="discount">
                                             </div>
                                         </div>
                                     </li>
@@ -304,7 +304,7 @@
                                         <div class="card-order__total-title">Timbre:</div>
                                         <div class="input-group">$
                                             <div class="input input--edit">
-                                                <input style="width: 40px !important;"min="0" value="0" id="timbre" type="number" step="0.01" name="timbre">
+                                                <input style="width: 40px !important;" min="0" value="0" id="timbre" type="number" step="0.01" name="timbre">
                                             </div>
                                         </div>
                                     </li>
@@ -312,19 +312,19 @@
                                         <div class="card-order__total-title">DIAGNOSTIQUE:</div>
                                         <div class="input-group">$
                                             <div class="input input--edit">
-                                                <input style="width: 40px !important;" value="0" id="diagnostic" min="0"type="number" name="diagnostic">
+                                                <input style="width: 40px !important;" value="0" id="diagnostic" min="0" type="number" name="diagnostic">
                                             </div>
                                         </div>
                                     </li>
                                     <li class="card-order__total-item card-order__total-footer">
                                         <div class="card-order__total-title">total:</div>
-                                        <div class="card-order__total-value" >$
+                                        <div class="card-order__total-value">$
                                             <input style="width: 50px !important;" value="0" disabled id="final_price" type="text" name="final_price">
                                         </div>
                                     </li>
                                 </ul>
                                 <br>
-                                <button class="button button--primary btn_calculate" type="button">
+                                <button class="button button--primary" id="btn_save" type="button">
                                     <span class="button__text">Enregistrer</span>
                                 </button>
                             </div>
@@ -339,25 +339,18 @@
 @section('script')
 <script src="{{asset('js\validation.js')}}"></script>
 <script>
-    // $(document).ready(function() {
-    $(document).on('click', ".prod_remove", function(e) {
-        old_price = $(this).closest('tr').find('.y_prod_total').html();
-        subtotal = $('#subtotal').val();
-        $('#subtotal').val(subtotal - old_price);
-        var r = $(this).closest('tr').remove();
-    });
-    // })
-    $("#subtotal").on("keyup",function(){
+    $("#subtotal").on("keyup", function() {
         alert('change');
-      var sub = parseFloat($(this).val());
-      var tax = parseFloat($("#tax").val());
-      var discount = parseFloat($("#discount").val());
-      var timbre = parseFloat($("#timbre").val());
-      tax = (sub / 100) * tax;
-      discount = (sub / 100) * discount;
-      var fp = sub-discount-tax+timbre;
-      $("#final_price").val(fp);
+        var sub = parseFloat($(this).val());
+        var tax = parseFloat($("#tax").val());
+        var discount = parseFloat($("#discount").val());
+        var timbre = parseFloat($("#timbre").val());
+        tax = (sub / 100) * tax;
+        discount = (sub / 100) * discount;
+        var fp = sub - discount - tax + timbre;
+        $("#final_price").val(fp);
 
     });
+    $("#btn_save").on("click", interSave(e));
 </script>
 @endsection

@@ -17,7 +17,7 @@ class CreateInterventionsTable extends Migration
             $table->increments('id');
             $table->string('product_name');
             $table->string('product_ref');
-            $table->float('product_price');
+            $table->float('product_price')->default(0);
             $table->integer('quantity');
             $table->float('subtotal');
             $table->integer('tva');
@@ -25,8 +25,8 @@ class CreateInterventionsTable extends Migration
             $table->float('net_a_payer');
             $table->float('discount');
             $table->float('diagnostic');
-            $table->integer('tickets_id')->unsigned();
-            $table->foreign('tickets_id')->references('id')->on('tickets');
+            $table->integer('ticket_id')->unsigned();
+            $table->foreign('ticket_id')->references('id')->on('tickets');
             $table->timestamps();
         });
     }

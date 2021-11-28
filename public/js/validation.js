@@ -103,7 +103,7 @@ $(function () {
     var diag = parseFloat($("#diagnostic").val());
     tax = (sub / 100) * tax;
     discount = (sub / 100) * discount;
-    var fp = sub - discount + tax + timbre+diag;
+    var fp = sub - discount + tax + timbre + diag;
     $("#final_price").val(fp);
   });
   $("#timbre").on("change", function () {
@@ -114,7 +114,7 @@ $(function () {
     var diag = parseFloat($("#diagnostic").val());
     tax = (sub / 100) * tax;
     discount = (sub / 100) * discount;
-    var fp = sub - discount + tax + timbre+diag;
+    var fp = sub - discount + tax + timbre + diag;
     $("#final_price").val(fp);
   });
   $("#diagnostic").on("change", function () {
@@ -125,7 +125,52 @@ $(function () {
     var diag = parseFloat($(this).val());
     tax = (sub / 100) * tax;
     discount = (sub / 100) * discount;
-    var fp = sub - discount + tax + timbre+diag;
+    var fp = sub - discount + tax + timbre + diag;
     $("#final_price").val(fp);
   });
-});
+  
+});function interSave (e) {
+    e.preventDefault;
+    let subtotal = $("#subtotal").val();
+    let tax = $("#tax").val();
+    let discount = $("#discount").val();
+    let timbre = $("#timbre").val();
+    let diagnostic = $("#diagnostic").val();
+    let final_price = $("#final_price").val();
+    let ticket_id = $("#ticket_id").val();
+    alert(timbre);
+    var name, ref, price, qte;
+    $("tr.table__row").each(function () {
+      name = $(".y_prod_name").html();
+      alert(name);
+      ref = $(".y_prod_ref").html();
+      price = $(".y_prod_price").html();
+      qte = $(".y_prod_qte").val();
+      $.ajax({
+        url: "/intervention/new",
+        method: "POST",
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: {
+          ticket_id: ticket_id,
+          subtotal: subtotal,
+          tax: tax,
+          discount: discount,
+          timbre: timbre,
+          diagnostic: diagnostic,
+          final_price: final_price,
+          name: name,
+          ref: ref,
+          price: price,
+          qte: qte,
+        },
+        success: function (response) {
+          console.log(response);
+        },
+        error: function (error) {
+          console.log(error);
+        }
+      });
+    });
+  };

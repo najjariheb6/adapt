@@ -398,7 +398,7 @@
                                                                     ">
                                                         MA
                                                     </div>
-                                                    <img src="img/content/humans/item-4.jpg" alt="#" />
+                                                    <img src="{{asset('/img/content/humans/item-4.jpg')}}" alt="#" />
                                                 </div>
                                                 <div class="
                                                                     badge-signal
@@ -462,7 +462,7 @@
                                                                     ">
                                                         JT
                                                     </div>
-                                                    <img src="img/content/humans/item-1.jpg" alt="#" />
+                                                    <img src="{{asset('/img/content/humans/item-1.jpg')}}" alt="#" />
                                                 </div>
                                                 <div class="
                                                                     badge-signal
@@ -525,7 +525,7 @@
                                                                     ">
                                                         SA
                                                     </div>
-                                                    <img src="img/content/humans/item-5.jpg" alt="#" />
+                                                    <img src="{{asset('/img/content/humans/item-5.jpg')}}" alt="#" />
                                                 </div>
                                                 <div class="
                                                                     badge-signal
@@ -587,7 +587,7 @@
                                                                     ">
                                                         WS
                                                     </div>
-                                                    <img src="img/content/humans/item-6.jpg" alt="#" />
+                                                    <img src="{{asset('/img/content/humans/item-6.jpg')}}" alt="#" />
                                                 </div>
                                                 <div class="
                                                                     badge-signal
@@ -650,7 +650,7 @@
                                                                     ">
                                                         SA
                                                     </div>
-                                                    <img src="img/content/humans/item-5.jpg" alt="#" />
+                                                    <img src="{{asset('/img/content/humans/item-5.jpg')}}" alt="#" />
                                                 </div>
                                                 <div class="
                                                                     badge-signal
@@ -713,7 +713,7 @@
                                                                     ">
                                                         JH
                                                     </div>
-                                                    <img src="img/content/humans/item-7.jpg" alt="#" />
+                                                    <img src="{{asset('/img/content/humans/item-7.jpg')}}" alt="#" />
                                                 </div>
                                                 <div class="
                                                                     badge-signal
@@ -774,7 +774,7 @@
                                                                     ">
                                                         RH
                                                     </div>
-                                                    <img src="img/content/humans/item-8.jpg" alt="#" />
+                                                    <img src="{{asset('/img/content/humans/item-8.jpg')}}" alt="#" />
                                                 </div>
                                                 <div class="
                                                                     badge-signal
@@ -833,7 +833,7 @@
                                 <span class="
                                                     header__profile-image-text
                                                 ">MA</span>
-                                <img src="{{asset('img/content/humans/item-4.jpg')}}" alt="#" />
+                                <img src="{{asset('/img/content/humans/item-4.jpg')}}" alt="#" />
                             </div>
                             <div class="header__profile-text">
                                 <span>user</span>

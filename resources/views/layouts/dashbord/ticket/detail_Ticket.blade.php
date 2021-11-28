@@ -43,10 +43,12 @@
             </div>
             <div class="page-tools__right">
                 <div class="page-tools__right-row">
-                    <div class="page-tools__right-item"><a class="button-icon" href="#"><span class="button-icon__icon">
+                    <div class="page-tools__right-item">
+                        <a class="button-icon" href="{{url('intervention/pdf-view',$id)}}"><span class="button-icon__icon">
                                 <svg class="icon-icon-print">
                                     <use xlink:href="#icon-print"></use>
-                                </svg></span></a>
+                                </svg></span>
+                            </a>
                     </div>
                     <div class="page-tools__right-item">
                         <button class="button-icon" type="button"><span class="button-icon__icon">
@@ -96,11 +98,7 @@
                     </div>
                 </section>
                 <section class="card-order__section card-order__method">
-                    <div class="card-order__footer-submit float-right">
-                        <button class="button button--secondary add-prod" type="button">
-                            <span class="button__text">Ajouter Produit</span>
-                        </button>
-                    </div>
+
                     <div class="card__container">
 
                         <h2 class="card__title">Machine</h2>
@@ -166,21 +164,25 @@
                                 </th>
                                 <th><span>TOTAL</span>
                                 </th>
-                                <th class="table__actions"></th>
+                                <!-- <th class="table__actions"></th> -->
                             </tr>
+
                         </thead>
                         <tbody id="products_tbody">
+                            <?php $total=0;$net=0; ?>
+                            @foreach($tickets->intervention as $inter)
                             <tr class="table__row">
                                 <td editable class="table__td">
-                                    <div contenteditable="true" class="input input--edit mw-200 text-light-theme">
-                                        #
+                                    <div class="input-group input-group--prepend-xs">
+                                        <div class="input-group__prepend">@</div>
+                                        <div class="input input--edit y_prod_name">{{$inter->product_name}}</div>
                                     </div>
                                 </td>
                                 <td class="table__td text-center text-dark-theme">
                                     <div class="d-inline-block">
                                         <div class="input-group input-group--prepend-xs">
-                                            <div class="input-group__prepend">@</div>
-                                            <div class="input input--edit" contenteditable="true"></div>
+                                            <div class="input-group__prepend">#</div>
+                                            <div class="input input--edit y_prod_ref">{{$inter->product_ref}}</div>
                                         </div>
                                     </div>
                                 </td>
@@ -188,22 +190,27 @@
                                     <div class="d-inline-block">
                                         <div class="input-group input-group--prepend-xs">
                                             <div class="input-group__prepend">$</div>
-                                            <div class="input input--edit y_prod_price" contenteditable="true"></div>
+                                            <div class="input input--edit y_prod_price">{{$inter->product_price}}</div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="table__td text-center x_prod_qte">
-                                    <input class="input input--edit text-center text-light-theme y_prod_qte" type="number" value="1" min="1" max="999">
+                                    <input class="input input--edit text-center text-light-theme y_prod_qte" type="text" value=" {{$inter->quantity}}" min="1" max="999">
                                 </td>
-                                <td class="table__td text-nowrap text-dark-theme x_prod_total">$</td>
-                                <td class="table__td table__actions text-dark-theme">
-                                    <button class="table__remove prod_remove" type="button">
-                                        <svg class="icon-icon-trash">
+                                <td class="table__td text-center text-dark-theme">
+                                    <div class="d-inline-block">
+                                        <div class="input-group input-group--prepend-xs">
+                                            <div class="input-group__prepend">$</div>
+                                            <div class="input input--edit y_prod_total">{{$inter->subtotal}}</div>
+                                            <?php $total+=$inter->subtotal;$net+=$inter->net_a_payer; ?>
+                                        </div>
+                                    </div>
+                                </td>
+                                <!-- {{--<td class="table__td table__actions text-dark-theme"> <button class="table__remove prod_remove" type="button"> <svg class="icon-icon-trash">
                                             <use xlink:href="#icon-trash"></use>
-                                        </svg>
-                                    </button>
-                                </td>
+                                        </svg> </button> </td>--}} -->
                             </tr>
+                            @endforeach
                             <!--{{-- <tr class="table__row">
                                 <td class="table__td">
                                     <div class="mw-200"><span class="text-light-theme">MacBook Pro 15” (Mid 2018)</span>
@@ -260,29 +267,64 @@
                 <div class="card-order__footer-total">
                     <div class="card__container">
                         <div class="row gutter-bottom-sm justify-content-end">
-                            <div class="card-order__footer-submit col-12 col-sm">
-                                <button class="button button--secondary add-prod" type="button"><span class="button__text">Ajouter Produit</span>
-                                </button>
-                            </div>
+
                             <div class="col-auto">
                                 <ul class="card-order__total">
                                     <li class="card-order__total-item">
                                         <div class="card-order__total-title">Subtotal:</div>
-                                        <div class="card-order__total-value">$75,000</div>
+                                        <!-- <div class="card-order__total-value" id="subtotal">$0</div> -->
+                                        <div class="input-group">$
+                                            <div class="input input--edit">
+                                                <!-- <input style="width: 40px !important;" value="0" disabled id="subtotal" type="text" name="subtotal"> -->
+                                                <?php echo ($total); ?>
+                                            </div>
+                                        </div>
                                     </li>
                                     <li class="card-order__total-item">
                                         <div class="card-order__total-title">TAX(%):</div>
-                                        <div class="card-order__total-value">$90,000</div>
+                                        <div class="input-group">%
+                                            <div class="input input--edit">
+                                                {{-- <input style="width: 40px !important;" value="0" id="tax" type="number" min="0" name="tax">
+                                             --}}{{$tickets->intervention[0]->tva}}
+                                            </div>
+                                        </div>
                                     </li>
                                     <li class="card-order__total-item">
                                         <div class="card-order__total-title">Remise(%):</div>
-                                        <div class="card-order__total-value">10%</div>
+                                        <div class="input-group">%
+                                            <div class="input input--edit">
+                                                <!-- <input style="width: 40px !important;" value="0" id="discount" type="number" min="0" name="discount"> -->
+                                                {{$tickets->intervention[0]->discount}}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="card-order__total-item">
+                                        <div class="card-order__total-title">Timbre:</div>
+                                        <div class="input-group">$
+                                            <div class="input input--edit">
+                                                <!-- <input style="width: 40px !important;" min="0" value="0" id="timbre" type="number" step="0.01" name="timbre"> -->
+                                                {{$tickets->intervention[0]->timbre}}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="card-order__total-item">
+                                        <div class="card-order__total-title">DIAGNOSTIQUE:</div>
+                                        <div class="input-group">$
+                                            <div class="input input--edit">
+                                                <!-- <input style="width: 40px !important;" value="0" id="diagnostic" min="0" type="number" name="diagnostic"> -->
+                                                {{$tickets->intervention[0]->diagnostic}}
+                                            </div>
+                                        </div>
                                     </li>
                                     <li class="card-order__total-item card-order__total-footer">
                                         <div class="card-order__total-title">total:</div>
-                                        <div class="card-order__total-value">$81,000</div>
+                                        <div class="card-order__total-value">$
+                                            <!-- <input style="width: 50px !important;" value="0" disabled id="final_price" type="text" name="final_price"> -->
+                                            <?php echo ($net+$inter->diagnostic+$inter->timbre); ?>
+                                        </div>
                                     </li>
                                 </ul>
+                                <br>
                             </div>
                         </div>
                     </div>
